@@ -1,0 +1,32 @@
+.image{
+    position: relative;
+}
+.image-details{
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.image-details h2{
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    font-size: 35px;
+}
+.image-details h1, .provide{
+    font-family: "Oswald", sans-serif;
+}
+
+.mySwiper{
+    height: max-content;
+}
+.thirdOne{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    text-align: center;
+    padding: 21px;
+}

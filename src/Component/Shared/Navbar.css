@@ -1,0 +1,32 @@
+.main{
+    height: 80px;    
+}
+.logo{
+
+}
+.logo img{
+    width: 30%;
+}
+nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px;
+    align-items: center;
+}
+.nav-elements{
+    width: 40%;
+}
+.nav-elements ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-elements ul li{
+    list-style: none;
+}
+.nav-elements ul li a{
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+}
