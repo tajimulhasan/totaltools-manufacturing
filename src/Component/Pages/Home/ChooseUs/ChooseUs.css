@@ -1,0 +1,30 @@
+.ourTools-p{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 80%;
+margin: 4rem  auto;
+
+}
+.imgSec {
+    width: 30%;
+}
+.imgSec img{
+    width: 90%;
+}
+.chooseDetails{
+width: 50%;
+padding: 1rem;
+}
+.chooseDetails h2{
+    color: #375a64;
+font-size: 45px;
+font-weight: bold;
+font-family: "Oswald", sans-serif;
+}
+.chooseDetails p{
+    margin-top: 1.0rem;
+  font-size: 18px;
+  color: rgb(102, 102, 102);
+  text-align: justify;
+}

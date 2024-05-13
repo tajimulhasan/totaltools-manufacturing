@@ -1,0 +1,27 @@
+.profile-parent{
+    width: 25%;
+    height: max-content;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    padding: 15px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.profile img{
+    width: 150px;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+}
+.review-details h1{
+     font-size: 20px;
+     text-align: center;
+}
+.stars{
+ display: flex;
+ justify-content: center;
+ margin-top: 6px;
+}

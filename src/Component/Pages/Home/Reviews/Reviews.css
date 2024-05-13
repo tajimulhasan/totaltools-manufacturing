@@ -1,0 +1,14 @@
+.review-main-parent{
+    width: 80%;
+    height: max-content;
+    margin: 0px auto;
+}
+.review{
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.review-parent {
+    width: 100%;
+}

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Drill",
+        "shortDescription": "Buy Power Drills for DIY and professional use online in Bangladesh",
+        "moQuantity": 10,
+        "availableQuantity": 46,
+        "price": 25,
+        "picture": "https://i.ibb.co/N2Kxmfq/drill.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Hacksaw",
+        "shortDescription": "Hacksaw. It has a thin metal blade and teeth-like cut on either edge",
+        "moQuantity": 10,
+        "availableQuantity": 64,
+        "price": 4,
+        "picture": "https://i.ibb.co/zVt6jwX/haskSaw.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Needle-nose pliers",
+        "shortDescription": "Needle-nose pliers, also known as long-nose pliers and snipe-nose pliers, are both cutting and holding pliers used by artisans, jewellery designers, etc.",
+        "moQuantity": 10,
+        "availableQuantity": 56,
+        "price": 23,
+        "picture": "https://i.ibb.co/bX2sK46/pliers.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Tape Measure",
+        "shortDescription": "A standard tape measure is used for all field measurements, such as setting heights for switches and outlets",
+        "moQuantity": 15,
+        "availableQuantity": 86,
+        "price": 3,
+        "picture": "https://i.ibb.co/bdf2VdK/tape.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Screwdriver",
+        "shortDescription": "Screwdriver. It is a tool with a flat head that helps us to push a screw into a socket.",
+        "moQuantity": 20,
+        "availableQuantity": 77,
+        "price": 2,
+        "picture": "https://i.ibb.co/Qkgs3gm/Untitled-1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Wrench",
+        "shortDescription": "Wrench. These are tools that are used to tighten a nut around a bolt so that they don't fall off.",
+        "moQuantity": 10,
+        "availableQuantity": 76,
+        "price": 12,
+        "picture": "https://i.ibb.co/n8WZKtS/wrench.jpg"
+    }
+]

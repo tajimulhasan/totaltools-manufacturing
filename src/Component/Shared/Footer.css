@@ -1,0 +1,25 @@
+.footer-container{
+ display: flex;
+}
+.footer-pack{
+
+}
+
+.footerTitle a{
+  display: block;
+}
+.anchor-tag{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 10px auto;
+}
+.anchor-tag a, h6{
+    color: white;
+    display: flex;
+}
+.anchor-tag h6{
+     margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
