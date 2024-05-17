@@ -1,0 +1,23 @@
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 6px 6px -2px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+.authImg img{
+    width: 400px;
+}
+.form-container{
+    width: 36%;
+    margin: 0px auto;
+}
+

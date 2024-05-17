@@ -2,10 +2,10 @@
     height: 80px;    
 }
 .logo{
-
+width: 11%;
 }
 .logo img{
-    width: 30%;
+    width: max-content;
 }
 nav{
     height: 100%;
@@ -28,5 +28,19 @@ nav{
 }
 .nav-elements ul li a{
     text-decoration: none;
-    font-family: "Oswald", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+}
+.login-button{
+    color: black;
+    border: 1px solid #ffd20a;
+     padding:  0.4rem 1rem;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.login-button:hover{
+color: white;
+background-color: #ffd20a;
 }
