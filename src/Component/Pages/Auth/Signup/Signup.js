@@ -12,6 +12,7 @@ import auth from "../../../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
 import { useRef } from "react";
+import useToken from "../../../../hooks/useToken";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -26,20 +27,23 @@ const Signup = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+  const [token] = useToken(user || guser || gituser);
+
+
   const navigate = useNavigate();
 
   if (loading || gloading || gitloading) {
     return <Loading></Loading>;
   }
 
-  if (user || guser || gituser) {
+  if(token) {
     navigate("/home");
   }
   //submition
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    console.log(data);
     reset();
   };
 

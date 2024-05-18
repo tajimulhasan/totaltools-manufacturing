@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import SocialLogin from './SocialLogin/SocialLogin';
 import authImg from '../../images/authImg.png';
 import { useForm } from 'react-hook-form';
@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
+import useToken from '../../../hooks/useToken';
 
 
 const Login = () => {
@@ -23,8 +24,9 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
     auth
   );
-const handleEmailWithRef = useRef('');
+  const [token] = useToken(user || guser || gituser);
 
+const handleEmailWithRef = useRef('');
  const navigate = useNavigate();
  const location = useLocation();
 
@@ -34,14 +36,17 @@ const handleEmailWithRef = useRef('');
   return <Loading></Loading>
 }
 
+
+  if (token) {
+    navigate(from, { replace: true });
+  }
+
+
     const onSubmit = async (data) => {
         await signInWithEmailAndPassword(data.email, data.password)
       console.log(data);
     };
 
-if(user || guser || gituser){
-    navigate(from, {replace: true})
-}
 
 const handleResetPass = async() =>{
    const email = handleEmailWithRef.current.value;

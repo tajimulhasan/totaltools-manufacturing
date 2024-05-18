@@ -12,7 +12,8 @@ const Navbar = () => {
     return <Loading></Loading>;
   }
 const handleLogout = () =>{
-    signOut(auth)
+    signOut(auth);
+    localStorage.removeItem('accessToken')
 }
   return (
     <div class="main">

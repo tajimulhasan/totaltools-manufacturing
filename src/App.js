@@ -11,6 +11,11 @@ import Footer from './Component/Shared/Footer';
 import DashBoard from './Component/Pages/Dashboard/DashBoard';
 import RequireAuth from './Component/Pages/Auth/RequireAuth/RequireAuth';
 import Purchase from './Component/Pages/Home/purchase/Purchase';
+import MyOrders from './Component/Pages/Dashboard/MyOrders';
+import AddaReview from './Component/Pages/Dashboard/AddaReview';
+import MyProfile from './Component/Pages/Dashboard/MyProfile';
+import AllUsers from './Component/Pages/Dashboard/AllUsers';
+import RequireAdmin from './RequireAdmin/RequireAdmin';
 
 function App() {
   return (
@@ -23,7 +28,16 @@ function App() {
          <RequireAuth>
           <DashBoard></DashBoard>
          </RequireAuth>
-         }></Route>
+         }>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="addareview" element={<AddaReview></AddaReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="allusers" element={
+            <RequireAdmin>
+              <AllUsers></AllUsers>
+            </RequireAdmin>
+          }></Route>
+         </Route>
          <Route path='/purchase/:id'element={
          <RequireAuth>
           <Purchase></Purchase>
