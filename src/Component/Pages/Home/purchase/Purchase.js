@@ -31,7 +31,7 @@ const Purchase = () => {
   //   } = useForm();
 
   const {
-    name,
+     name,
     shortDescription,
     moQuantity,
     availableQuantity,
@@ -63,11 +63,13 @@ const Purchase = () => {
 
   const handleSubmitOrder = (e) => {
     e.preventDefault();
+    const clientName = displayName;
     const orderQuantity = e.target.orderQuantity.value;
     const address = e.target.address.value;
     const phoneNumber = e.target.phoneNumber.value;
     const totalPrice = parseInt(orderQuantity) * price; 
-    const data = { name, email, orderQuantity, address, phoneNumber,  totalPrice };
+    const productName = name;
+    const data = { clientName, productName, email, orderQuantity, address, phoneNumber,  totalPrice };
 
     const url = `http://localhost:5000/orders`;
     fetch(url, {

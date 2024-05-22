@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
-const User = ({user, index, refetch}) => {
+const User = ({user, index, setUserRemove, refetch}) => {
     const {email, role} = user;
          const handleMakeAdmin = () =>{
             fetch(`http://localhost:5000/users/admin/${email}`, {
@@ -30,7 +30,9 @@ const User = ({user, index, refetch}) => {
         <th>{index + 1}</th>
         <td>{email}</td>
         <td>{ role !== 'admin' && <button onClick={handleMakeAdmin} class="btn btn-xs">Make admin</button>}</td>
-        <td><button class="btn btn-xs">Remove</button></td>
+        <td><label
+         htmlFor='remove-user'
+        onClick={() => setUserRemove(user)} class="btn btn-xs">Remove</label></td>
         <ToastContainer/>
       </tr>    
     );

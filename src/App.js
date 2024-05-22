@@ -16,6 +16,7 @@ import AddaReview from './Component/Pages/Dashboard/AddaReview';
 import MyProfile from './Component/Pages/Dashboard/MyProfile';
 import AllUsers from './Component/Pages/Dashboard/AllUsers';
 import RequireAdmin from './RequireAdmin/RequireAdmin';
+import Payment from './Component/Pages/Payment/Payment';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
          }>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="addareview" element={<AddaReview></AddaReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="allusers" element={
             <RequireAdmin>

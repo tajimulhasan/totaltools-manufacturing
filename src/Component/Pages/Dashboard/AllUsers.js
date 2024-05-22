@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
 import User from './User';
+import Modal from './Modal';
 
 const AllUsers = () => {
-            
-    const {data: users, isLoading, error, refetch} = useQuery('users', () => fetch(`http://localhost:5000/users`, {
-        method: "GET", 
+  const [userRemove, setUserRemove] = useState(null);    
+  const {data: users, isLoading, refetch} = useQuery('users', () => fetch(`http://localhost:5000/users`, {
+    method: "GET", 
         headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()));
+      }).then(res => res.json()));
+      
       if(isLoading){
         return <Loading></Loading>
       }
-
+      
     return (
         <div>
-            <h1>Here is all users: {users.length}</h1>
+            <h1>Here is all users: {users?.length}</h1>
             <div class="overflow-x-auto">
   <table class="table">
 
@@ -31,11 +33,12 @@ const AllUsers = () => {
     </thead>
     <tbody>
       {
-        users.map((user, index) => <User key={user._id} index={index} user={user} refetch={refetch}></User>)
+        users.map((user, index) => <User key={user._id} index={index} user={user} setUserRemove={setUserRemove} refetch={refetch} ></User>)
       }
     </tbody>
   </table>
 </div>
+{userRemove && <Modal userRemove={userRemove} setUserRemove={setUserRemove} refetch={refetch}></Modal>}
         </div>
     );
 };

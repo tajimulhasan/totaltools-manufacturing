@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './MyOrder.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 
 const MyOrders = () => {
@@ -60,13 +60,17 @@ const MyOrders = () => {
         {
             orders.map((order, index) => <tr>
                 <th>{index + 1}</th>
-                <td>{order.name}</td>
+                <td>{order.productName}</td>
                 <td>{order.email}</td>
                 <td>{order.orderQuantity}</td>
                 <td>{order.address}</td>
                 <td>{order.phoneNumber}</td>
                 <td>${order.totalPrice}</td>
-                <td><button className='btn btn-sm bg-green-600 text-white'>Pay</button></td>
+                <td>
+                  {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-sm bg-green-600 text-white'>Pay</button></Link>}
+                  {(order.totalPrice && order.paid) && <span className='text-success'>paid</span>}
+                  </td>
+                <td></td>
               </tr>)
         }
     </tbody>
