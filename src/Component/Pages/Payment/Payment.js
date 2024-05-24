@@ -7,13 +7,13 @@ import auth from "../../../firebase.init";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import './Payment.css';
 
 const stripePromise = loadStripe(
   "pk_test_51PCnkDAwo2Gm2GONYhMo6C6PxBZ3kfaIYnBEiYz9W3WVhMVyduA2J7zt9xhaaV5C0Gg8tPkt2iOW5ALcFLWPyIhn00XmsdgvFk"
 );
 
 const Payment = () => {
-  const [user] = useAuthState(auth);
   const { id } = useParams();
   const url = `http://localhost:5000/orders/${id}`;
   const { data: order, isLoading } = useQuery("order", () =>
@@ -28,7 +28,7 @@ const Payment = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="max-w-max mx-auto mt-14">
+    <div className="max-w-max mx-auto mt-14 payment-card-parent">
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title text-primary">Hello, {order.clientName}</h2>

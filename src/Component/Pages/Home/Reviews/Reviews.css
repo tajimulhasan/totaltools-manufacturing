@@ -1,7 +1,8 @@
 .review-main-parent{
-    width: 80%;
-    height: 450px;
+    width: 65%;
     margin: 1rem auto;
+    font-family: "Roboto Condensed", sans-serif;
+
 }
 .review{
     font-family: "Oswald", sans-serif;
@@ -10,5 +11,10 @@
 }
 
 .review-parent {
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.newReview{
+    display: flex;
+    justify-content: space-evenly;
 }

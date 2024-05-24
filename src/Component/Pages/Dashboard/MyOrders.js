@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './MyOrder.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import OrderCancelModal from './OrderCancelModal';
+import { ToastContainer } from 'react-toastify';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const [message, setMessage] = useState('');
+    const [orderCancel, setOrderCancel] = useState(null);
     const navigate = useNavigate();
     useEffect(() => {
         if(user){
@@ -37,8 +40,9 @@ const MyOrders = () => {
               }
             })
         }
-    }, [])
+    }, [orderCancel])
 
+    
     return (
         <div class="overflow-x-auto table-container">
           <h1>Hi, {user.displayName} {orders.length > 1 ? "your orders" : "your order"}: {orders.length}</h1>
@@ -68,14 +72,24 @@ const MyOrders = () => {
                 <td>${order.totalPrice}</td>
                 <td>
                   {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-sm bg-green-600 text-white'>Pay</button></Link>}
-                  {(order.totalPrice && order.paid) && <span className='text-success'>paid</span>}
+                  {(order.totalPrice && order.paid) && <div>
+                    <p><span className='text-success'>paid</span></p>
+                    <p className='text-xs'>Transaction id: <span  className='text-success'>{order.transactionId}</span></p>
+                    </div>}
                   </td>
-                <td></td>
+                  <td>
+                  {
+                    (order.totalPrice && !order.paid) && 
+                    <label onClick={() => setOrderCancel(order)} htmlFor="order-cancel" className='text-red-500 cursor-pointer'>Cancel</label>
+                  }
+                  </td>
               </tr>)
         }
     </tbody>
   </table>
   <p className='text-3xl text-center mt-6' style={{color: "gray"}}>{message}</p>
+                  {orderCancel && <OrderCancelModal orderCancel={orderCancel} setOrderCancel={setOrderCancel}></OrderCancelModal>}
+                  <ToastContainer />
 </div>
     );
 };

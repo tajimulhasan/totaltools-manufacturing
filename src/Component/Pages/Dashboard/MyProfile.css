@@ -1,0 +1,30 @@
+.your-profile{
+    margin: 0rem auto;
+    width: 28%;
+    font-family: "Roboto Condensed", sans-serif;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding: 0.8rem;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}   
+.your-profile img{
+    width: 45%;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.profie-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.displayName{
+   text-align: center;
+   font-size: 22px;
+}

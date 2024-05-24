@@ -1,4 +1,4 @@
-.profile-parent{
+.newReview-profile {
     width: 240px;
     height: max-content;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -8,20 +8,4 @@
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
-}
-.profile img{
-    width: 50%;
-}
-.profile{
-    display: flex;
-    justify-content: center;
-}
-.review-details h1{
-     font-size: 20px;
-     text-align: center;
-}
-.stars-all{
- display: flex;
- justify-content: center;
- margin-top: 6px;
 }
