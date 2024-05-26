@@ -1,0 +1,139 @@
+import React from "react";
+import "./AddProduct.css";
+import { ToastContainer, toast } from "react-toastify";
+const AddProduct = () => {
+  const imgageStorageKey = "a6b38fffe0cce648c493ea2e121f1977";
+
+  const handleAddProductSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const shortDescription = event.target.shortdescription.value;
+    const moQuantity = parseInt(event.target.moquantity.value);
+    const availableQuantity = parseInt(event.target.availablequantity.value);
+    const price = parseInt(event.target.price.value);
+    const picture = event.target.picture.files[0];
+    const formData = new FormData();
+    formData.append("image", picture);
+    const imgUrl = `https://api.imgbb.com/1/upload?key=${imgageStorageKey}`;
+    fetch(imgUrl, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+
+
+        if (imgData.success) {
+          const pictureUrl = imgData.data.url;
+          const data = {
+            name,
+            shortDescription,
+            moQuantity,
+            availableQuantity,
+            price,
+            picture: pictureUrl,
+          };
+
+
+          const url = "http://localhost:5000/products";
+          fetch(url, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(data),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              if (result) {
+                toast.success("Product added successful");
+              } else {
+                toast.error("Failed to add product");
+              }
+              event.target.reset();
+            });
+        }
+      });
+  };
+  return (
+    <div className="addProduct-container">
+      <form onSubmit={handleAddProductSubmit}>
+        <h1>Add Product</h1>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Product name:</span>
+          </div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Short description:</span>
+          </div>
+          <input
+            type="text"
+            name="shortdescription"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Minimum order quantity: </span>
+          </div>
+          <input
+            type="number"
+            name="moquantity"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Available quantity:</span>
+          </div>
+          <input
+            type="number"
+            name="availablequantity"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Price:</span>
+          </div>
+          <input
+            type="number"
+            name="price"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text">Product image:</span>
+          </div>
+          <input
+            type="file"
+            name="picture"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </label>
+        <input
+          type="submit"
+          value="Add a product"
+          class="input input-bordered w-full max-w-xs btn bg-primary mt-3 hover:bg-black hover:text-white"
+        />
+      </form>
+      <ToastContainer />
+    </div>
+  );
+};
+
+export default AddProduct;

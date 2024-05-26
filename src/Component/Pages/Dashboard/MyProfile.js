@@ -13,8 +13,13 @@ const MyProfile = () => {
   const [myProfielInfo, setMyProfileInfo] = useState(null);
   const [UpdateProfielInfo, setUpdateProfileInfo] = useState(null);
   const [user, loading] = useAuthState(auth);
-  const { data: profileInfo, isLoading, refetch} = useQuery("profileInformation", () =>
-    fetch(`http://localhost:5000/profile/${user.email}`).then((res) =>
+  const { data: profileInfo, isLoading, refetch} = useQuery(["profileInformation", user?.email], () =>
+    fetch(`http://localhost:5000/profile/${user.email}`, {
+        method: "GET",
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then((res) =>
       res.json()
     )
   );
@@ -24,6 +29,7 @@ const MyProfile = () => {
     }
   }, [myProfielInfo, UpdateProfielInfo, refetch]);
 
+
   if (loading || isLoading) {
     return <Loading></Loading>;
   }
@@ -31,7 +37,7 @@ const MyProfile = () => {
 
   return (
     <div>
-      <h2>My Profile</h2>
+      <h2 className="myProfile">My Profile</h2>
       <div className="your-profile">
         <div className="profie-image">
           <img className="outline outline-offset-0 outline-primary" src={user.photoURL === null ? boys : user.photoURL} alt="" />
@@ -40,8 +46,11 @@ const MyProfile = () => {
         <p className="text-center">{user.email}</p>
 
         {
-           profileInfo ?    
-           <div className="info">
+           !profileInfo ?    
+
+           ''
+         : 
+         <div className="info">
              <label class="form-control w-full max-w-xs mt-2">
            <div class="label  p-0">
              <span class="label-text">Education:</span>
@@ -68,8 +77,6 @@ const MyProfile = () => {
            <p className="text-slate-400">{profileInfo.linkedIn}</p>
          </label> 
            </div>
-         : 
-         ''
            }
       <label
             disabled={profileInfo}

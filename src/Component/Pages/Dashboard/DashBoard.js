@@ -18,10 +18,16 @@ const DashBoard = () => {
         <div class="drawer-side">
           <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label> 
           <ul class="menu p-4 w-64 min-h-full bg-primary text-base-content dashboard-menu">
-            <li><Link to="/dashboard"><a className='text-center'>My Orders</a></Link></li>
+            {
+            !admin ?
+             <li><Link to="/dashboard"><a className='text-center'>My Orders</a></Link></li>
+            :
+            <li><Link to="/dashboard"><a>All Users</a></Link></li>
+          }
             { !admin &&  <li><Link to="/dashboard/addareview"><a>Add A Review</a></Link></li>}
+            {admin && <li><Link to="/dashboard/addProduct"><a>Add A Product</a></Link></li>}
+            {admin && <li><Link to="/dashboard/manageProducts"><a>Manage product</a></Link></li>}
             <li><Link to="/dashboard/myprofile"><a>My Profile</a></Link></li>
-            { admin && <li><Link to="/dashboard/allusers"><a>All Users</a></Link></li>}
           </ul>
         
         </div>

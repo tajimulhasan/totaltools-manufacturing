@@ -44,7 +44,7 @@ const MyProfileInfoModal = ({setMyProfileInfo, refetch}) => {
     <div className="add-info-parent">
       <input type="checkbox" id="profile-more-info" class="modal-toggle" />
       <div class="modal" role="dialog">
-        <div class="modal-box w-1/4">
+        <div class="modal-box w-1/3">
           <p className="text-xl text-center">Add info</p>
           <form method="dialog">
              <label for="profile-more-info" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">

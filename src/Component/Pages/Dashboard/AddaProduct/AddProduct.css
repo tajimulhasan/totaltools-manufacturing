@@ -1,0 +1,15 @@
+.addProduct-container{
+    width: 40%;
+    margin: 0px auto;
+    padding: 1rem;
+}
+form{
+    width: 320px;
+    margin: 0px auto;
+
+}
+form h1{
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+    font-size: 22px;
+}

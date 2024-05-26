@@ -17,8 +17,15 @@ import MyProfile from './Component/Pages/Dashboard/MyProfile';
 import AllUsers from './Component/Pages/Dashboard/AllUsers';
 import RequireAdmin from './RequireAdmin/RequireAdmin';
 import Payment from './Component/Pages/Payment/Payment';
+import useAdmin from './hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import AddProduct from './Component/Pages/Dashboard/AddaProduct/AddProduct';
+import ManageProducts from './Component/Pages/Dashboard/ManageProduct/ManageProducts';
 
 function App() {
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user)
   return (
     <>
     <Navbar></Navbar>
@@ -30,15 +37,27 @@ function App() {
           <DashBoard></DashBoard>
          </RequireAuth>
          }>
-          <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path="addareview" element={<AddaReview></AddaReview>}></Route>
-          <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
-          <Route path="allusers" element={
+          {
+          !admin ? <Route index element={<MyOrders></MyOrders>}></Route> : 
+          <Route index element={
             <RequireAdmin>
               <AllUsers></AllUsers>
             </RequireAdmin>
           }></Route>
+          }
+          <Route path="addareview" element={<AddaReview></AddaReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path="addProduct" element={
+            <RequireAdmin>
+              <AddProduct></AddProduct>
+            </RequireAdmin>
+          }></Route>
+          <Route path="manageProducts" element={
+            <RequireAdmin>
+             <ManageProducts />
+            </RequireAdmin>
+          }></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>        
          </Route>
          <Route path='/purchase/:id'element={
          <RequireAuth>

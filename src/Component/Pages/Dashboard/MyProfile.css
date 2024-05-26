@@ -10,6 +10,10 @@
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
 }   
+.myProfile{
+    font-family: "Roboto Condensed", sans-serif;
+
+}
 .your-profile img{
     width: 45%;
     border-radius: 100%;
