@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, name, refetch}) => {
 
@@ -9,7 +9,7 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
         const upadatedQuantity = availableQuantityUpdate + newQuantity;
         const url = `http://localhost:5000/products/${id}`;
         fetch(url, {
-            method: "PUT",
+            method: "PATCH",
             headers: {
                 "content-type": "application/json"
             },
@@ -17,15 +17,16 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
         })
         .then(res => res.json())
         .then(data => {
-            if(data){
-                toast.success("Available quantity updated")
+            if(data.modifiedCount){
+                toast.success("Available quantity updated");
+                e.target.reset();
+                refetch();
+                setAvailableQuantityUpdate(null);
             }
             else{
-                toast.error("Update failed")
+              toast.error("Failed to update quantity")
             }
-            e.target.reset();
-            refetch();
-            setAvailableQuantityUpdate(null);
+           
         })
 
     }
@@ -58,7 +59,7 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
           </form>
         </div>
       </div>
-      <ToastContainer/>
+
     </div>
   );
 };

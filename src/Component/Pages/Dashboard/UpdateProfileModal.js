@@ -1,55 +1,50 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { ToastContainer, toast } from 'react-toastify';
-import auth from '../../../firebase.init';
+import { toast } from "react-toastify";
+const UpdateProfileModal = ({
+  setUpdateProfileInfo,
+  UpdateProfielInfo,
+  refetch,
+}) => {
+  const handleUpdateInfoSubmit = (event) => {
+    event.preventDefault();
+    const education = event.target.education.value;
+    const location = event.target.location.value;
+    const phoneNumber = event.target.phoneNumber.value;
+    const linkedIn = event.target.linkedIn.value;
+    const email = UpdateProfielInfo.email;
+    const data = { education, location, phoneNumber, linkedIn };
+    const url = `http://localhost:5000/profile/${email}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
 
-const UpdateProfileModal = ({setUpdateProfileInfo, profileInfo, refetch}) => {
-    const [user] = useAuthState(auth);
-
-
-    const handleUpdateInfoSubmit = (event) =>{
-        event.preventDefault();
-        const education = event.target.education.value;
-        const location = event.target.location.value;
-        const phoneNumber = event.target.phoneNumber.value;
-        const linkedIn = event.target.linkedIn.value;
-        const email = user.email;
-         const data = {email, education, location, phoneNumber, linkedIn};
-         const url = `http://localhost:5000/profile/${user.email}`;
-         fetch(url, {
-             method: "PUT",
-              headers: {
-                 "content-type": "application/json"
-              },
-              body: JSON.stringify(data)
-         })
-         .then(res => res.json())
-         .then(data => {
-               if(data){
-                   toast.success("Updated successfully!");
-               }
-               else{
-                toast.error("Failed. Try again")
-            }
-             event.target.reset();
-             refetch();
-                setUpdateProfileInfo(null);
-         })
- 
-       
-    }
-    return (
-        <div className="add-info-parent">
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Updated successfully!");
+          refetch();
+          setUpdateProfileInfo(null);
+        }
+      });
+  };
+  return (
+    <div className="add-info-parent">
       <input type="checkbox" id="profile-more-info" class="modal-toggle" />
       <div class="modal" role="dialog">
-        <div class="modal-box w-1/4">
+        <div class="modal-box w-1/3">
           <p className="text-xl text-center">Update info</p>
           <form method="dialog">
-             <label for="profile-more-info" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <label
+              for="profile-more-info"
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
               ✕
             </label>
           </form>
-          <form  onSubmit={handleUpdateInfoSubmit} className="info-fields">
+          <form onSubmit={handleUpdateInfoSubmit} className="info-fields">
             <label class="form-control w-full max-w-xs">
               <div class="label">
                 <span class="label-text">Education</span>
@@ -104,9 +99,8 @@ const UpdateProfileModal = ({setUpdateProfileInfo, profileInfo, refetch}) => {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </div>
-    );
+  );
 };
 
 export default UpdateProfileModal;

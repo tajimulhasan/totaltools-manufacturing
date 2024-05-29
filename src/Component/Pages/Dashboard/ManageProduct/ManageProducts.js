@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import { useQuery } from "react-query";
 import ManageProductChild from "./ManageProductChild";
 import Loading from "../../../Loading/Loading";
 import './ManageProducts.css';
+import { ToastContainer } from "react-toastify";
 
 const ManageProducts = () => {
   const {data: allProducts, isLoading, refetch} = useQuery("allProducts", () => fetch(`http://localhost:5000/products`).then(res => res.json()));
@@ -16,12 +16,12 @@ const ManageProducts = () => {
       <div class="overflow-x-auto manageProducts-primary-conatiner text-center">
         <table class="table">
           <thead>
-            <tr>
-              <th>Products</th>
-              <th>Total price</th>
-              <th>Add quantity</th>
-              <th></th>
-              <th></th>
+            <tr className="text-center">
+              <th className="text-start ps-24">Products</th>
+              <th className="text-start">Total price</th>
+              <th className="">Add quantity</th>
+              <th className="text-center">Update</th>
+              <th className="text-center">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +31,7 @@ const ManageProducts = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.css';
 import { useNavigate } from 'react-router-dom';
 const Product = ({product}) => {
-            const {_id, name, picture, moQuantity, availableQuantity, price, shortDescription} = product;
+            const {_id, productName, picture, moQuantity, availableQuantity, price, shortDescription} = product;
             const navigate = useNavigate();
             const handlePurchase = id =>{
                 navigate(`/purchase/${id}`)
@@ -10,7 +10,7 @@ const Product = ({product}) => {
     return (
         <div className='product'>
             <img src={picture} alt="" />
-           <h2 className='text-2xl font-bold'>{name}</h2> 
+           <h2 className='text-2xl font-bold'>{productName}</h2> 
            <div className="product-details">
            <p className='description'>{shortDescription.slice(0, 50)}...</p>
            <p>Available quantity: <span>{availableQuantity}</span></p>

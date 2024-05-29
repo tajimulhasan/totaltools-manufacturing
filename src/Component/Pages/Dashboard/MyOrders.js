@@ -40,7 +40,7 @@ const MyOrders = () => {
               }
             })
         }
-    }, [orderCancel])
+    }, [user, orders])
 
     
     return (
@@ -71,15 +71,15 @@ const MyOrders = () => {
                 <td>{order.phoneNumber}</td>
                 <td>${order.totalPrice}</td>
                 <td>
-                  {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-sm bg-green-600 text-white'>Pay</button></Link>}
-                  {(order.totalPrice && order.paid) && <div>
+                  {(order.totalPrice && order.status === "unpaid") && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-sm bg-green-600 text-white'>Pay</button></Link>}
+                  {(order.totalPrice && order.status === "paid" || order.status === "Shipped") && <div>
                     <p><span className='text-success'>paid</span></p>
                     <p className='text-xs'>Transaction id: <span  className='text-success'>{order.transactionId}</span></p>
                     </div>}
                   </td>
                   <td>
                   {
-                    (order.totalPrice && !order.paid) && 
+                    (order.totalPrice && order.status === "unpaid") && 
                     <label onClick={() => setOrderCancel(order)} htmlFor="order-cancel" className='text-red-500 cursor-pointer'>Cancel</label>
                   }
                   </td>
@@ -89,7 +89,7 @@ const MyOrders = () => {
   </table>
   <p className='text-3xl text-center mt-6' style={{color: "gray"}}>{message}</p>
                   {orderCancel && <OrderCancelModal orderCancel={orderCancel} setOrderCancel={setOrderCancel}></OrderCancelModal>}
-                  <ToastContainer />
+    <ToastContainer />
 </div>
     );
 };

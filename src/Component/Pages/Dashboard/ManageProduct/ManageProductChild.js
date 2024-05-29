@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import './ManageProductChild.css';
 import UpdateModal from "./UpdateModal";
 import ManageDeleteModal from "./ManageDeleteModal";
+import ManageProductUpdateModal from "./ManageProductUpdateModal";
 
 const ManageProductChild = ({ allProduct, index, refetch }) => {
   const [availableQuantityUpdate, setAvailableQuantityUpdate] = useState(null);
+  const [productUpdate, setProductUpdate] = useState(null);
   const [productDelete, setProductDelete] = useState(null);
-  const {_id, picture, name, availableQuantity, price } = allProduct;
+  const {_id, picture, productName, availableQuantity, price } = allProduct;
   const allProductPrice = availableQuantity * price;
   return (
     <tr>
-      <td>
+      <td className="">
         <div class="flex items-center gap-3">
           <div class="avatar">
             <div class=" w-12 h-12">
@@ -18,19 +20,20 @@ const ManageProductChild = ({ allProduct, index, refetch }) => {
             </div>
           </div>
           <div>
-            <div class="font-bold">{name}</div>
+            <div class="font-bold">{productName}</div>
             <div class="text-sm opacity-50">Available: {availableQuantity}</div>
           </div>
         </div>
       </td>
       <td>${allProductPrice}</td>
-      <td>
+      <td className=" flex justify-center"> 
        <label
        onClick={() => setAvailableQuantityUpdate(availableQuantity)}
         htmlFor="update-quantity"
-       className="max-w-max">
+        className=""
+       >
        <svg
-         className="update-available-quantity"
+         className="update-available-quantity flex flex-center"
           xmlns="http://www.w3.org/2000/svg"
           width="28"
           height="28"
@@ -43,13 +46,21 @@ const ManageProductChild = ({ allProduct, index, refetch }) => {
       </td>
       <td className="w-10">
         <label 
+        onClick={() => setProductUpdate(allProduct)}
+        htmlFor="product-update"
+        class="btn btn-sm bg-primary"
+        >Edit</label>
+      </td>
+      <td className="w-10">
+        <label 
         onClick={() => setProductDelete(allProduct)}
         htmlFor="product-delete"
         class="btn btn-sm bg-red-500"
         >Delete</label>
       </td>
-    {availableQuantityUpdate && <UpdateModal availableQuantityUpdate={availableQuantityUpdate} setAvailableQuantityUpdate={setAvailableQuantityUpdate} id={_id} name={name} refetch={refetch}></UpdateModal>}
+    {availableQuantityUpdate && <UpdateModal availableQuantityUpdate={availableQuantityUpdate} setAvailableQuantityUpdate={setAvailableQuantityUpdate} id={_id} name={productName} refetch={refetch}></UpdateModal>}
     {productDelete && <ManageDeleteModal setProductDelete={setProductDelete} productDelete={productDelete} refetch={refetch}></ManageDeleteModal>}
+    {productUpdate && <ManageProductUpdateModal productUpdate={productUpdate} setProductUpdate={setProductUpdate} refetch={refetch}/>}
     </tr>
   );
 };

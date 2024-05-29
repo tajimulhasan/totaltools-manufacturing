@@ -87,7 +87,6 @@ useEffect(() =>{
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false);
-                    console.log( );
                 })
               }
     }

@@ -2,7 +2,7 @@ import React from "react";
 import './MyProfileInfoModal.css';
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const MyProfileInfoModal = ({setMyProfileInfo, refetch}) => {
     const [user] = useAuthState(auth);
 
@@ -107,7 +107,6 @@ const MyProfileInfoModal = ({setMyProfileInfo, refetch}) => {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

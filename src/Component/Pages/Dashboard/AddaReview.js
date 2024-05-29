@@ -28,8 +28,11 @@ const handleReviewSubmit = e =>{
     })
     .then(res => res.json())
     .then(data => {
+      if(data){
         e.target.reset();
         toast("Thank you for the feedback!");
+      }
+      
     })
 
 }

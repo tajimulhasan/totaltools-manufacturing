@@ -7,7 +7,8 @@ import Loading from "../../Loading/Loading";
 import "./MyProfile.css";
 import MyProfileInfoModal from "./MyProfileInfoModal";
 import UpdateProfileModal from "./UpdateProfileModal";
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from "react-toastify";
+
 
 const MyProfile = () => {
   const [myProfielInfo, setMyProfileInfo] = useState(null);
@@ -16,9 +17,6 @@ const MyProfile = () => {
   const { data: profileInfo, isLoading, refetch} = useQuery(["profileInformation", user?.email], () =>
     fetch(`http://localhost:5000/profile/${user.email}`, {
         method: "GET",
-        headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        }
     }).then((res) =>
       res.json()
     )
@@ -103,10 +101,11 @@ const MyProfile = () => {
       {myProfielInfo && (
         <MyProfileInfoModal setMyProfileInfo={setMyProfileInfo} refetch={refetch} />
       )}
+
       {UpdateProfielInfo && (
-        <UpdateProfileModal  setUpdateProfileInfo={setUpdateProfileInfo} profileInfo={profileInfo} refetch={refetch}/>
+        <UpdateProfileModal  setUpdateProfileInfo={setUpdateProfileInfo} profileInfo={profileInfo} refetch={refetch} UpdateProfielInfo={UpdateProfielInfo}/>
       )}
-      <ToastContainer></ToastContainer>
+      <ToastContainer/>
     </div>
   );
 };

@@ -29,10 +29,10 @@ const User = ({user, index, setUserRemove, refetch}) => {
         <tr>
         <th>{index + 1}</th>
         <td>{email}</td>
-        <td>{ role !== 'admin' && <button onClick={handleMakeAdmin} class="btn btn-xs">Make admin</button>}</td>
+        <td>{ role !== 'admin' && <button onClick={handleMakeAdmin} class="btn btn-xs bg-primary">Make admin</button>}</td>
         <td><label
          htmlFor='remove-user'
-        onClick={() => setUserRemove(user)} class="btn btn-xs">Remove</label></td>
+        onClick={() => setUserRemove(user)} class="btn btn-xs bg-red-400">Remove</label></td>
         <ToastContainer/>
       </tr>    
     );

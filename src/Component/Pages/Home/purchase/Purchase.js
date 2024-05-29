@@ -31,7 +31,7 @@ const Purchase = () => {
   //   } = useForm();
 
   const {
-     name,
+    productName,
     shortDescription,
     moQuantity,
     availableQuantity,
@@ -68,8 +68,8 @@ const Purchase = () => {
     const address = e.target.address.value;
     const phoneNumber = e.target.phoneNumber.value;
     const totalPrice = parseInt(orderQuantity) * price; 
-    const productName = name;
-    const data = { clientName, productName, email, orderQuantity, address, phoneNumber,  totalPrice };
+    const status = 'unpaid';
+    const data = { clientName, productName, email, orderQuantity, address, phoneNumber,  totalPrice, status};
 
     const url = `http://localhost:5000/orders`;
     fetch(url, {
@@ -110,7 +110,7 @@ const Purchase = () => {
           <img src={picture} alt="" />
         </div>
         <div className="purchase-details">
-          <h1>{name}</h1>
+          <h1>{productName}</h1>
           <p className="description">{shortDescription}</p>{" "}
           <p className="quantity">Available: {availableQuantity}</p>
           <p className="quantity">Minimum order quantity: {moQuantity}</p>

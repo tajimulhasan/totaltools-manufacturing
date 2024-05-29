@@ -1,65 +1,51 @@
-import React from "react";
-import "./AddProduct.css";
-import { ToastContainer, toast } from "react-toastify";
-const AddProduct = () => {
-  const imgageStorageKey = "a6b38fffe0cce648c493ea2e121f1977";
+import React from 'react';
+import { toast } from 'react-toastify';
 
-  const handleAddProductSubmit = (event) => {
-    event.preventDefault();
-    const productName = event.target.name.value;
+const ManageProductUpdateModal = ({productUpdate, setProductUpdate, refetch}) => {
+
+    const handleUpdateProductSubmit = (event) =>{
+        event.preventDefault();
+        const productName = event.target.name.value;
     const shortDescription = event.target.shortdescription.value;
     const moQuantity = parseInt(event.target.moquantity.value);
     const availableQuantity = parseInt(event.target.availablequantity.value);
     const price = parseInt(event.target.price.value);
-    const picture = event.target.picture.files[0];
-    const formData = new FormData();
-    formData.append("image", picture);
-    const imgUrl = `https://api.imgbb.com/1/upload?key=${imgageStorageKey}`;
-    fetch(imgUrl, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imgData) => {
+    const picture = event.target.picture.value;
+        const data = {productName, shortDescription, moQuantity, availableQuantity, price, picture};
 
-
-        if (imgData.success) {
-          const pictureUrl = imgData.data.url;
-          const data = {
-            productName,
-            shortDescription,
-            moQuantity,
-            availableQuantity,
-            price,
-            picture: pictureUrl,
-          };
-
-
-          const url = "http://localhost:5000/products";
-          fetch(url, {
-            method: "POST",
+    const url = `http://localhost:5000/product/${productUpdate._id}`;
+        fetch(url, {
+            method: "PATCH",
             headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                "content-type": "application/json",
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify(data),
-          })
-            .then((res) => res.json())
-            .then((result) => {
-              if (result) {
-                toast.success("Product added successful");
-              } else {
-                toast.error("Failed to add product");
-              }
-              event.target.reset();
-            });
-        }
-      });
-  };
-  return (
-    <div className="addProduct-container">
-      <form onSubmit={handleAddProductSubmit}>
-        <h1>Add Product</h1>
+           body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount){
+                toast.success("Product update successfully");
+                refetch()
+                setProductUpdate(null)
+            }
+        })
+    }
+    return (
+        <div className="add-info-parent">
+        <input type="checkbox" id="product-update" class="modal-toggle" />
+        <div class="modal" role="dialog">
+          <div class="modal-box w-1/3">
+            <p className="text-xl text-center">Update info</p>
+            <form method="dialog">
+              <label
+                for="product-update"
+                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
+                ✕
+              </label>
+            </form>
+            <form onSubmit={handleUpdateProductSubmit}>
         <label class="form-control w-full max-w-xs">
           <div class="label">
             <span class="label-text">Product name:</span>
@@ -124,10 +110,10 @@ const AddProduct = () => {
         </label>
         <label class="form-control w-full max-w-xs">
           <div class="label">
-            <span class="label-text">Product image:</span>
+            <span class="label-text">Product image link:</span>
           </div>
           <input
-            type="file"
+            type="text"
             name="picture"
             class="input input-bordered w-full max-w-xs"
             required
@@ -135,14 +121,15 @@ const AddProduct = () => {
         </label>
         <input
           type="submit"
-          value="Add a product"
+          value="Update"
           class="input input-bordered w-full max-w-xs btn bg-primary mt-3 hover:bg-black hover:text-white"
           required
         />
       </form>
-      <ToastContainer />
-    </div>
-  );
+          </div>
+        </div>
+      </div>
+    );
 };
 
-export default AddProduct;
+export default ManageProductUpdateModal;

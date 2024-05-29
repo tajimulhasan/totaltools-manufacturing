@@ -42,7 +42,6 @@ const ManageDeleteModal = ({setProductDelete, productDelete, refetch}) => {
         </div>
         </div>
       </div>
-      <ToastContainer />
         </div>
     );
 };
