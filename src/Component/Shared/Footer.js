@@ -23,9 +23,9 @@ const Footer = () => {
           <a href="#">Jobs</a>
           <a href="#">Press kit</a>
         </div>
-        <div className="footer-pack">
+        <div className="footer-pack social-medialogo">
         <h6 class="footerTitle">Social</h6>
-          <div class="grid grid-flow-col gap-4 mt-12">
+          <div class="grid grid-flow-col gap-4">
             <a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -2,8 +2,7 @@
     height: 80px;    
     background-color: white;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 15px;
-    width: 100%;
-  
+    width: 100%; 
     z-index: 1000;
 }
 .logo{
@@ -48,4 +47,68 @@ nav{
 .login-button:hover{
 color: white;
 background-color: #ffd20a;
+}
+#check{
+    display: none;
+}
+
+label #list-btn,
+label #cancel{
+    display: none;
+}
+.label-btn{
+    display: none;
+}
+
+
+@media only screen and (max-width: 576px){
+    .logo{
+        width: 30%;
+        }
+        .logo img{
+            width: 100%;
+        }
+
+        nav{
+            height: 100%;
+            margin: 0px 20px;
+        }
+
+        label #list-btn{
+            display: block;
+        }
+        .label-btn{
+            display: block;
+        }
+        .nav-elements ul{     
+            position: fixed;
+            top: 80px;
+            background-color: black;
+            width: 100%;
+            opacity: 0.8;
+            left: -100%;
+            height: 100vh;
+            z-index: 100000;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+}
+.nav-elements ul li a{
+ color: white;
+}
+.nav-elements ul{
+    display: block;
+    text-align: center;
+}
+
+#check:checked ~ .nav-elements ul{
+    left: 0;
+}
+/* .nav-elements ul li {
+    display: block;
+    text-align: center;
+    justify-content: center;
+} */
 }

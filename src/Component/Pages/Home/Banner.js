@@ -31,8 +31,8 @@ const Banner = () => {
             <img src={banner2} class="w-full" />
             <div className="image-details p-2">
               <h2>ALL TYPE OF</h2>
-              <h1 className="text-7xl font-bold">BASIC TOOLS</h1>
-              <button className="btn  btn-secondary rounded-full ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
+              <h1 className="heading1 font-bold">BASIC TOOLS</h1>
+              <button className="learnmore-button btn bg-secondary ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
                 Learn more
               </button>
             </div>
@@ -42,9 +42,9 @@ const Banner = () => {
            <div className="image">
             <img src={banner} class="w-full" />
             <div className="image-details p-2">
-              <h1 className="text-7xl font-bold">BEST QUALITY</h1>
-              <p className="mt-5 mb-0 provide">WE PROVIDE QUALITY PRODUCT AND ENSURE SUSTAIN FOR LONG TIME.</p>
-              <button className="btn  btn-secondary rounded-full ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
+              <h1 className="heading1 font-bold">BEST QUALITY</h1>
+              <p className="mb-0 provide">WE PROVIDE QUALITY PRODUCT AND ENSURE SUSTAIN FOR LONG TIME.</p>
+              <button className=" learnmore-button btn  btn-secondary rounded-full ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
                 Learn more
               </button>
             </div>

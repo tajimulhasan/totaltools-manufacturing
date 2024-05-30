@@ -26,3 +26,24 @@ margin: 0px auto;
 .purchase-button{
     font-family: "Roboto Condensed", sans-serif;
 }
+.product h2{
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 576px) {
+    .product{
+        width: 99%;
+        padding: 0.5rem;
+        margin: 0px auto;
+    }
+    .product img{
+        width: 50%;
+        margin: 0px auto;
+        }
+        .product p{
+            font-size: 14px;
+        }
+        .product h2{
+            font-size: 20px;
+        }
+}

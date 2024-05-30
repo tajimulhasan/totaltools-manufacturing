@@ -7,18 +7,18 @@ import "./BusinessSummery.css";
 const BusinessSummery = () => {
   const [counterOn, setCounterOn] = useState(false);
   return (
-    <div className="backgrundpng mt-12 ">
+    <div className="backgrundpng">
       <img className="backgroundImage" src={backgrundPng} alt="" />
       <ScrollTrigger
         className="backgroundMain"
         onEnter={() => setCounterOn(true)}
         onExit={() => setCounterOn(false)}
       >
-        <div className="business-main mt-10">
-          <h1 className="text-center text-4xl font-bold tagProduct">
+        <div className="business-main">
+          <h1 className="text-center tagProduct font-bold ">
             <span className="text-primary">NUMBER OF PEOPLE</span> WHO TRUST US
           </h1>
-          <div className="flex justify-around mt-14">
+          <div className=" main-icon-ele-parent flex justify-around">
             <div className="text-center icon-ele-parent">
               <div className="counter-icon">
                 <svg

@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa';
 const NewReview = ({r, profileImg}) => {
     const {reviewerName, feedback, rating} = r;
     return (
-        <div className='newReview-profile mt-12'>
+        <div className='profile-parent mt-12'>
               <div className='profile'>
                 <img src={profileImg} alt="" />
             </div>

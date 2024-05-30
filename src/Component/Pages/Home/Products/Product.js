@@ -10,7 +10,7 @@ const Product = ({product}) => {
     return (
         <div className='product'>
             <img src={picture} alt="" />
-           <h2 className='text-2xl font-bold'>{productName}</h2> 
+           <h2 className='font-bold'>{productName}</h2> 
            <div className="product-details">
            <p className='description'>{shortDescription.slice(0, 50)}...</p>
            <p>Available quantity: <span>{availableQuantity}</span></p>

@@ -1,23 +1,27 @@
-/* .business-main{
-    background-image: url(/src/Component/images/background.png);
-    background-repeat: no-repeat;
-} */
+.business-main{
+margin-top: 40px;
+}
 .backgrundpng{
     position: relative;
     background-color: rgba(228, 228, 228, 0.3); /* 30% opacity */
+    height: 390px;
+    margin: 60px 0px;
+}
 
-}
-.backgroundImage{
-}
 .backgroundMain{
     position: absolute;
     top: 0%;
     width: 100%;
 }
-
+.tagProduct{
+    font-size: 36px;
+}
 .counter-icon{
  display: flex;
  justify-content: center;
+}
+.main-icon-ele-parent{
+    margin-top: 56px;
 }
 .icon-ele-parent h2{
     font-size: 33px;
@@ -27,4 +31,39 @@
 .icon-ele-parent p{
     font-size: 18px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 576px) {
+    .backgrundpng{
+        position: relative;
+        background-color: rgba(228, 228, 228, 0.3); /* 30% opacity */
+        height: 180px;
+        margin: 40px 0px;
+    }
+    .business-main{
+margin-top: 12px;
+}
+    .tagProduct{
+        font-size: 22px;
+    }
+    .icon-ele-parent h2{
+        font-size: 22px;
+         font-weight: bold;
+         width: 50%;
+    }
+    .icon-ele-parent p{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .icon-ele-parent{
+    }
+    .counter-icon{
+        display: flex;
+        justify-content: center;
+      width: 50%;   
+    }
+    .main-icon-ele-parent{
+        margin-top: 0px;
+    }
+
 }

@@ -12,6 +12,9 @@
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
 }
+.heading1{
+    font-size: 72px;
+}
 .image-details h2{
     font-family: "Oswald", sans-serif;
     font-weight: 200;
@@ -20,7 +23,9 @@
 .image-details h1, .provide{
     font-family: "Oswald", sans-serif;
 }
-
+.provide{
+    margin-top: 1rem;
+}
 .mySwiper{
     height: max-content;
 }
@@ -29,4 +34,31 @@
     width: 20%;
     text-align: center;
     padding: 21px;
+}
+
+@media only screen and (max-width: 576px) {
+    .image-details{
+        width: 50%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }  
+    .image-details h2{
+        font-family: "Oswald", sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+    }
+    .heading1{
+        font-size: 30px;
+    }
+    .learnmore-button{
+       display: none;
+    }
+    .provide{
+        margin-top: 0.5rem;
+        font-size: 14px;
+    }
+    .thirdOne{
+        display: none;
+    }
 }

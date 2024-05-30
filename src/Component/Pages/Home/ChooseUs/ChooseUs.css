@@ -28,3 +28,31 @@ font-family: "Oswald", sans-serif;
   color: rgb(102, 102, 102);
   text-align: justify;
 }
+@media only screen and (max-width: 576px) {
+    .ourTools-p{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
+        margin: 4rem  auto;
+        
+        } 
+        .imgSec {
+            width: 50%;
+        }
+        .imgSec img{
+            width: 100%;
+        }
+        .chooseDetails h2{
+            color: #375a64;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: "Oswald", sans-serif;
+        text-align: center;
+        }
+        .chooseDetails{
+            width: 100%;
+            padding: 1rem;
+            }
+}

@@ -11,10 +11,19 @@
 }
 
 .review-parent {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 .newReview{
     display: flex;
     justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .review-parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

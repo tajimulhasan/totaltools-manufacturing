@@ -40,3 +40,40 @@
 .copyright-msg{
     color: rgb(109, 109, 109);
 }
+
+@media only screen and (max-width: 576px) {
+    .anchor-tag{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 70%;
+        margin: 10px auto;
+    }
+    .whitelogo{
+           display: flex;
+           justify-content: center;
+    }
+    .whitelogo img{
+        width: 150px;
+     }
+     .footer-container{
+        display: flex;
+        flex-direction: column;
+       }
+       .social-medialogo{
+        margin-top: 12px;
+       }
+       .copyright-section{
+        margin-top: 2rem;
+        display: block;
+        justify-content: space-between;
+        color: white;
+    }
+    .others{
+        display: none;
+    }
+    .copyright-msg {
+        font-size: 11px;
+        text-align: center;
+    }
+}

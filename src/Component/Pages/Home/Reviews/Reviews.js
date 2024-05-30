@@ -78,11 +78,11 @@ const reviewParent = (
           review={reviewParent}
 
         ></Review>
-      </div>
-      <div className="newReview">
-        {reviews.map((r) => (
+          <div>
+          {reviews.map((r) => (
           <NewReview key={r._id} r={r} profileImg={profile2} />
         ))}
+          </div>
       </div>
     </div>
   );
