@@ -82,7 +82,12 @@ const MyOrders = () => {
                     (order.totalPrice && order.status === "unpaid") && 
                     <label onClick={() => setOrderCancel(order)} htmlFor="order-cancel" className='text-red-500 cursor-pointer'>Cancel</label>
                   }
+                    {order.status === "paid" && <span className="btn btn-xs bg-primary">Pending</span>}
+                    {order.status === "Shipped" && <span className="btn btn-xs bg-green-400">Shipped</span>}
                   </td>
+                  
+                  
+                 
               </tr>)
         }
     </tbody>
