@@ -30,6 +30,7 @@ function App() {
   return (
     <>
     <Navbar></Navbar>
+       <div>
        <Routes>
          <Route path='/'element={<Home></Home>}></Route>
          <Route path='/home'element={<Home></Home>}></Route>
@@ -74,7 +75,8 @@ function App() {
          <Route path='/signup'element={<Signup></Signup>}></Route>
          <Route path='/login'element={<Login></Login>}></Route>
          <Route path='*'element={<NotFound></NotFound>}></Route>
-        </Routes>  
+        </Routes>
+        </div> <br /><br /><br />
         <Footer></Footer>      
         
     </>

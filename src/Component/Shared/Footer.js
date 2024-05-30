@@ -1,9 +1,12 @@
 import React from "react";
 import "./Footer.css";
+import whiteLogo from '../images/ttm-logo-white.png';
 const Footer = () => {
   return (
-    <footer class="footer-container p-10 bg-black text-secondary mt-20">
-      <div>
+    <footer className=" p-10 bg-black text-secondary">
+     <div class="footer-container">
+     <div className="whitelogo">
+        <img src={whiteLogo} alt="" />
       </div>
       <div className="anchor-tag">
         <div className="footer-pack">
@@ -57,6 +60,17 @@ const Footer = () => {
               </svg>
             </a>
           </div>
+        </div>
+      </div>
+     </div>
+     <div className="copyright-section">
+        <div className="copyright-msg ms-3">
+          <p>Copyright © 2024 TotalTools Mamufacturing</p>
+        </div>
+        <div className="others">
+          <p>Privcy Policy</p>
+          <p>Terms of Use</p>
+          <p>Pricing</p>
         </div>
       </div>
     </footer>

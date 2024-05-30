@@ -1,5 +1,10 @@
 .main{
     height: 80px;    
+    background-color: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 15px;
+    width: 100%;
+  
+    z-index: 1000;
 }
 .logo{
 width: 11%;
@@ -27,8 +32,8 @@ nav{
     list-style: none;
 }
 .nav-elements ul li a{
-    text-decoration: none;
     font-family: "Roboto Condensed", sans-serif;
+    text-decoration: none;
 }
 .login-button{
     color: black;

@@ -1,0 +1,11 @@
+.qAnda-container{
+ text-align: justify;
+ font-family: "Roboto Condensed", sans-serif;
+
+}
+.qAnda-container h1{
+    font-size: 33px;
+}
+.qAnda-container p, h3{
+    font-size: 20px;
+}

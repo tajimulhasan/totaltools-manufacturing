@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import "./Purchase.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
@@ -193,7 +193,7 @@ const Purchase = () => {
           disabled={agree}
           type="submit"
           name="submit"
-          value="Payment Gateway"
+          value="Place Order"
           className="form-control w-full max-w-xs mt-4 btn bg-primary hover:text-white hover:bg-black"
         />
       </form>
