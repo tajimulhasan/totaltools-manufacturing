@@ -110,7 +110,7 @@ const Purchase = () => {
           <img src={picture} alt="" />
         </div>
         <div className="purchase-details">
-          <h1>{productName}</h1>
+          <h1 className="product-name">{productName}</h1>
           <p className="description">{shortDescription}</p>{" "}
           <p className="quantity">Available: {availableQuantity}</p>
           <p className="quantity">Minimum order quantity: {moQuantity}</p>

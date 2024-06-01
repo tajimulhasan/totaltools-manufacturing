@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "../../images/banner1.jpg"; 
 import banner2 from "../../images/banner2c.jpg"; 
-import banner3 from "../../images/banner3.jpg"; 
+import banner3 from "../../images/banner3ano.jpg"; 
 import "./Banner.css";
 import "swiper/css";
 import "swiper/css/pagination";

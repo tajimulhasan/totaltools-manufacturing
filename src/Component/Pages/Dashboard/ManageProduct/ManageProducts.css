@@ -1,7 +1,14 @@
 .manageProducts{
     font-family: "Roboto Condensed", sans-serif;
+     margin-bottom: 4rem;
 }
 .manageProducts-primary-conatiner{
     width: 90%;
     margin: 1px auto;
+
+}
+@media only screen and (max-width: 576px){
+    .mp{
+          margin-left: 12px;        
+    }
 }

@@ -4,16 +4,18 @@ import Products from './Products/Products';
 import BusinessSummery from './BusinessSummery/BusinessSummery';
 import ChooseUs from './ChooseUs/ChooseUs';
 import Reviews from './Reviews/Reviews';
+import ContactUs from './ContactUs/ContactUs';
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner><br />
-            <Products></Products>
+            <Banner /><br />
+            <Products />
             <br />
-            <BusinessSummery></BusinessSummery><br /><br />
-            <ChooseUs></ChooseUs><br /><br />
-              <Reviews></Reviews>
+            <BusinessSummery/><br /><br />
+            <ChooseUs /><br /><br />
+              <Reviews />
+              <ContactUs />
         </div>
     );
 };

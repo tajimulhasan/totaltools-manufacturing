@@ -12,7 +12,7 @@ const ManageProducts = () => {
 
   return (
     <div className="manageProducts">
-      <h1>Manage product</h1>
+      <h1 className="mp">Manage product</h1>
       <div class="overflow-x-auto manageProducts-primary-conatiner text-center">
         <table class="table">
           <thead>

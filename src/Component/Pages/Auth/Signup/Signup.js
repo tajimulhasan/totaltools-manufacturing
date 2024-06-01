@@ -55,14 +55,14 @@ const Signup = () => {
       <div className="form-container">
         <h1 className="text-4xl text-center">Sign up</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label class="form-control w-full max-w-xs mt-1">
+          <label class="form-control mt-1">
             <div class="label">
               <span class="label-text">Name</span>
             </div>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full max-w-xs"
+              class="input input-bordered"
               {...register("name", {
                 required: {
                   value: true,

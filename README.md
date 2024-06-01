@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# TotalTools manufacturing.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* TotalTools is a tools manufacturing site. It has many facilities. In Client site you can order product, delete product, payment system etc. Before your order you have must an account and logged in. Otherwise you can't access to the page.After payment your order you will see the transactionId and success message and status. Fiist of all status will be pending. If admin change the status to shipped you can see shipped. You can also delete your order which is not paid. It has a review section.  If you waana feedback our service, you can review by wonderfull stars. After adding review you will see that on the home page. On [Myprofile] you could see your name, email addresss. If you want to add more info like education, address, contact number, linkedIn profile link there is option [Add more info]. And you can also edit these info.  It has review option.
+* Adimin:
+Adimn will see on the [Dashboard] diffent routes. Fist of all admin will see Allusers he/she could delete any user and make someone admin. In Dashboard, There is [Add-A-Product] , [Mnange-Product], [Manage-All-Orders] and [Profile] options. Admin could add product, delete product, update product, update available quantity, and manage all orders. In Manage All Orders page admin could see all orders of client. Also could delete order which is unpaid, and chage status pending to shipped by clicking button.
+
+## In TotalTools manufacturing we have used
+* ReactJS
+* HTML
+* CSS
+* tailwind.css(css component)
+* DaisyUi(component library
+for Tailwind CSS)
+* Firebase(For Authentication system)
+* Stripe(For payment system)
+
+### Packages
+* react-firebase-hooks
+* react-hook-form
+* react-query
+* react-toastify
+* react-countup
+* react-icons
+* react-scroll-trigger
+* swiper
 
 ## Available Scripts
 

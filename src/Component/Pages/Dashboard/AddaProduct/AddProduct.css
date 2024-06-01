@@ -1,6 +1,7 @@
 .addProduct-container{
     width: 36%;
-    margin: 0px auto;
+    margin: 1rem auto;
+    margin-bottom: 4rem;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 6px;
@@ -18,4 +19,14 @@ form h1{
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
     font-size: 22px;
+}
+
+
+@media only screen and (max-width: 576px){
+    .addProduct-container{
+        width: 95%;
+        margin: 0px auto;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
 }

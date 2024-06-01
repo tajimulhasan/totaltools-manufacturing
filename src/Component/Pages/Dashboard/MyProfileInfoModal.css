@@ -1,3 +1,11 @@
 .add-info-parent{
     font-family: "Roboto Condensed", sans-serif;
 }
+.myProfileAnd-update-modal-width-common{
+    width: 33.33%;
+}
+@media only screen and (max-width: 576px){
+    .myProfileAnd-update-modal-width-common{
+         width: 90%;   
+    }
+}

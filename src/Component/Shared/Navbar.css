@@ -6,10 +6,10 @@
     z-index: 1000;
 }
 .logo{
-width: 11%;
+width: 126px;
 }
 .logo img{
-    width: max-content;
+    width: 126px;
 }
 nav{
     height: 100%;
@@ -59,7 +59,9 @@ label #cancel{
 .label-btn{
     display: none;
 }
-
+.open-drawer23{
+    display: none;
+}
 
 @media only screen and (max-width: 576px){
     .logo{
@@ -85,7 +87,7 @@ label #cancel{
             top: 80px;
             background-color: black;
             width: 100%;
-            opacity: 0.8;
+            opacity: 0.9;
             left: -100%;
             height: 100vh;
             z-index: 100000;
@@ -98,6 +100,10 @@ label #cancel{
 .nav-elements ul li a{
  color: white;
 }
+.nav-elements ul li{
+ color: white;
+ margin: 20px 0px;
+}
 .nav-elements ul{
     display: block;
     text-align: center;
@@ -106,9 +112,25 @@ label #cancel{
 #check:checked ~ .nav-elements ul{
     left: 0;
 }
+#check:checked ~  label #list-btn{
+     display: none;
+ }
+#check:checked ~ label #cancel{
+     display: block;
+ }
 /* .nav-elements ul li {
     display: block;
     text-align: center;
     justify-content: center;
 } */
+
+.login-button{
+    color: white;
+
+
+}
+.open-drawer23{
+    display: block;
+    margin-right: 33px;
+}
 }

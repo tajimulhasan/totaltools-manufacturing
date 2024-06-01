@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../Component/images/ttm-logo.png";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
@@ -11,6 +11,7 @@ import menuCancelIcon from "../images/x.svg";
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
+  const location = useLocation();
   if (loading) {
     return <Loading></Loading>;
   }
@@ -53,6 +54,11 @@ const handleLogout = () =>{
             )}
           </ul>
         </div>
+        {(location.pathname === "/dashboard" || location.pathname === "/dashboard/addareview" || location.pathname === "/dashboard/myprofile" || location.pathname === "/dashboard/addProduct" || location.pathname === "/dashboard/manageProducts" || location.pathname === "/dashboard/manageAllOrders") && (
+          <div className="open-drawer23">
+            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Options</label>
+          </div>
+        )}
         <label htmlFor="check" className="label-btn">
           <img src={menuIcon} id="list-btn" alt="" />
           <img src={menuCancelIcon} id="cancel" alt="" />

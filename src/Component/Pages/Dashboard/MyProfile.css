@@ -1,5 +1,6 @@
 .your-profile{
     margin: 0rem auto;
+    margin-bottom: 3rem;
     width: 28%;
     font-family: "Roboto Condensed", sans-serif;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
@@ -31,4 +32,24 @@
 .displayName{
    text-align: center;
    font-size: 22px;
+}
+
+@media only screen and (max-width: 576px){
+
+    .your-profile{
+
+        margin: 1rem auto;
+        width: 80%;
+        font-family: "Roboto Condensed", sans-serif;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+        padding: 0.8rem;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+    }  
+    .myProfile{
+     margin-left: 12px;         
+    }
 }

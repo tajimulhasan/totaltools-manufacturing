@@ -34,7 +34,7 @@ const UpdateProfileModal = ({
     <div className="add-info-parent">
       <input type="checkbox" id="profile-more-info" class="modal-toggle" />
       <div class="modal" role="dialog">
-        <div class="modal-box w-1/3">
+        <div class="modal-box myProfileAnd-update-modal-width-common">
           <p className="text-xl text-center">Update info</p>
           <form method="dialog">
             <label

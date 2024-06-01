@@ -3,7 +3,18 @@
     font-weight: bold;
     font-size: 16px;
 }
-
 .dashboard-title{
     font-family: "Oswald", sans-serif;
+}
+.drawer-container{
+    margin-left: 12px;
+}
+@media only screen and (max-width: 576px){
+    .drawer-container{
+        margin-left: 0px;
+    }
+    .dashboard-title{
+        font-family: "Oswald", sans-serif;
+        margin-left: 12px;
+    }
 }

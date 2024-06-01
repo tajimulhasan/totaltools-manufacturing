@@ -10,7 +10,7 @@ const DashBoard = () => {
     return (
         <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content ms-3">
+        <div class="drawer-content drawer-container">
           {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>         */}
           <h3 className='text-primary text-2xl dashboard-title mt-3'>Dashboard</h3>
           <Outlet></Outlet>
