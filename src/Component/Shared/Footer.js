@@ -11,10 +11,10 @@ const Footer = () => {
       <div className="anchor-tag">
         <div className="footer-pack">
           <h6 class="footerTitle">Services</h6>
-          <a href="#">Branding</a>
-          <a href="#">Design</a>
+          <a href="#">Tools selling</a>
+          <a href="#">Exchanging</a>
           <a href="#">Marketing</a>
-          <a href="#">Advertisement</a>
+          <a href="#">Customizing</a>
         </div>
         <div className="footer-pack">
           <h6 class="footerTitle">Company</h6>
