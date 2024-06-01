@@ -49,28 +49,28 @@ const MyProfile = () => {
            ''
          : 
          <div className="info">
-             <label class="form-control w-full max-w-xs mt-2">
-           <div class="label  p-0">
-             <span class="label-text">Education:</span>
+             <label className="form-control w-full max-w-xs mt-2">
+           <div className="label  p-0">
+             <span className="label-text">Education:</span>
            </div>
            <p className="text-slate-400">{profileInfo.education}</p>
            </label> 
 
-            <label class="form-control w-full max-w-xs mt-2">
-           <div class="label  p-0">
-             <span class="label-text">Location(city/district):</span>
+            <label className="form-control w-full max-w-xs mt-2">
+           <div className="label  p-0">
+             <span className="label-text">Location(city/district):</span>
            </div>
            <p className="text-slate-400">{profileInfo.location}</p>
          </label> 
-            <label class="form-control w-full max-w-xs mt-2">
-           <div class="label  p-0">
-             <span class="label-text">Contact no.: </span>
+            <label className="form-control w-full max-w-xs mt-2">
+           <div className="label  p-0">
+             <span className="label-text">Contact no.: </span>
            </div>
            <p className="text-slate-400">{profileInfo.phoneNumber}</p>
          </label> 
-            <label class="form-control w-full max-w-xs mt-2">
-           <div class="label  p-0">
-             <span class="label-text">LinkedIn:</span>
+            <label className="form-control w-full max-w-xs mt-2">
+           <div className="label  p-0">
+             <span className="label-text">LinkedIn:</span>
            </div>
            <p className="text-slate-400">{profileInfo.linkedIn}</p>
          </label> 

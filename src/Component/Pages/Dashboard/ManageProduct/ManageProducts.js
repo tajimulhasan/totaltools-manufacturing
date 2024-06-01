@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 const ManageProducts = () => {
   const {data: allProducts, isLoading, refetch} = useQuery("allProducts", () => fetch(`http://localhost:5000/products`).then(res => res.json()));
 
-  
+
  if(isLoading){
   return <Loading></Loading>
  }
@@ -15,8 +15,8 @@ const ManageProducts = () => {
   return (
     <div className="manageProducts">
       <h1 className="mp">Manage product</h1>
-      <div class="overflow-x-auto manageProducts-primary-conatiner text-center">
-        <table class="table">
+      <div className="overflow-x-auto manageProducts-primary-conatiner text-center">
+        <table className="table">
           <thead>
             <tr className="text-center">
               <th className="text-start ps-24">Products</th>

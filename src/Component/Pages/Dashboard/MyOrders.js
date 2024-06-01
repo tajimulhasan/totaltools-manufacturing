@@ -42,12 +42,12 @@ const MyOrders = () => {
   }, [user, orders]);
 
   return (
-    <div class="overflow-x-auto table-container">
+    <div className="overflow-x-auto table-container">
       <h1>
         Hi, {user.displayName}{" "}
         {orders.length > 1 ? "your orders" : "your order"}: {orders.length}
       </h1>
-      <table class="table text-center table-container">
+      <table className="table text-center table-container">
         <thead>
           <tr>
             <th></th>

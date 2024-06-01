@@ -32,14 +32,14 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
     }
   return (
     <div>
-      <input type="checkbox" id="update-quantity" class="modal-toggle" />
-      <div class="modal" role="dialog">
-        <div class="modal-box">
+      <input type="checkbox" id="update-quantity" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
           <p className="text-xl mb-5">Update available quantity of <span className="text-primary">{name}</span></p>
           <form method="dialog">
             <label
               for="update-quantity"
-              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
             >
               ✕
             </label>
@@ -49,12 +49,12 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
               type="number"
               name="availablequantity"
               placeholder="New addable number.."
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               required
             />
             <input
               type="submit"
-              class="input input-bordered btn bg-primary w-full max-w-xs mt-3"
+              className="input input-bordered btn bg-primary w-full max-w-xs mt-3"
             />
           </form>
         </div>

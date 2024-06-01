@@ -10,9 +10,9 @@ const ContactUs = () => {
             <p className="contactus text-primary font-bold text-center">Contact Us</p>
       <p  className="stay-connected text-center text-white">Stay connected with us</p>
             <form className='' onSubmit={handleContactUsSubmit}>
-            <input type="text" placeholder="Email" class="input input-bordered w-full max-w-xs mb-3 mt-4" />
-            <input type="text" placeholder="Subject" class="input input-bordered w-full max-w-xs mb-3" />
-            <textarea class="textarea textarea-bordered  w-full  max-w-xs mb-1" placeholder="Your message"></textarea>
+            <input type="text" placeholder="Email" className="input input-bordered w-full max-w-xs mb-3 mt-4" />
+            <input type="text" placeholder="Subject" className="input input-bordered w-full max-w-xs mb-3" />
+            <textarea className="textarea textarea-bordered  w-full  max-w-xs mb-1" placeholder="Your message"></textarea>
          <input type="submit" className='btn bg-primary btn-md mt-2 w-full' value="Submit" />
             </form>
         </div>

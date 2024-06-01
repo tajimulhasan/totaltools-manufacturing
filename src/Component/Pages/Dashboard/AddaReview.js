@@ -6,7 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 const AddaReview = () => {
     const [rating, setRating] = useState(null);
-    const handleReviewComment = useRef('');
+    const reviewRef = useRef('');
     const [user] = useAuthState(auth);
     
   
@@ -14,7 +14,7 @@ const handleReviewSubmit = e =>{
     e.preventDefault();
     const email = user.email;
     const reviewerName = user.displayName;
-    const feedback = handleReviewComment.current.value;
+    const feedback = reviewRef.current.value;
     const data = {rating, feedback, email, reviewerName};
 
     const url = `http://localhost:5000/reviews`;
@@ -40,8 +40,8 @@ const handleReviewSubmit = e =>{
   return (
     <div className="review-container">
         <form onSubmit={handleReviewSubmit}>
-        <div class="label">
-            <span class="label-text">Please give us a star rating</span>
+        <div className="label">
+            <span className="label-text">Please give us a star rating</span>
           </div>
       <div className="flex">
         {[...Array(5)].map((star, index) => {
@@ -66,13 +66,13 @@ const handleReviewSubmit = e =>{
       </div>
       
       <div className="review-comment mt-6">
-        <label class="form-control">
-          <div class="label">
-            <span class="label-text">What would you tell others about your experience?</span>
+        <label className="form-control">
+          <div className="label">
+            <span className="label-text">What would you tell others about your experience?</span>
           </div>
           <textarea
-            ref={handleReviewComment}
-            class="textarea textarea-bordered h-24"
+            ref={reviewRef}
+            className="textarea textarea-bordered h-24"
             placeholder="Descripe about our product..."
             required
           ></textarea>

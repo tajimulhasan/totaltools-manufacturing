@@ -20,16 +20,16 @@ const Modal = ({userRemove, setUserRemove, refetch}) => {
   }
   return (
     <div>
-    <input type="checkbox" id="remove-user" class="modal-toggle" />
-    <div class="modal" role="dialog">
-      <div class="modal-box">
-        <h3 class=" text-lg text-secondary">Are your sure you want to delete <span className="text-red-400 font-bold">{email}</span>
+    <input type="checkbox" id="remove-user" className="modal-toggle" />
+    <div className="modal" role="dialog">
+      <div className="modal-box">
+        <h3 className=" text-lg text-secondary">Are your sure you want to delete <span className="text-red-400 font-bold">{email}</span>
         </h3>
-        <div class="modal-action">
-          <button onClick={() => handleRemove()} class="btn btn-error btn-xs">
+        <div className="modal-action">
+          <button onClick={() => handleRemove()} className="btn btn-error btn-xs">
             Confirm
           </button>
-          <label for="remove-user" class="btn btn-xs">
+          <label for="remove-user" className="btn btn-xs">
             Close!
           </label>
         </div>

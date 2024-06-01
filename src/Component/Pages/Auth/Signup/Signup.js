@@ -11,7 +11,6 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import auth from "../../../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
-import { useRef } from "react";
 import useToken from "../../../../hooks/useToken";
 
 const Signup = () => {
@@ -55,14 +54,14 @@ const Signup = () => {
       <div className="form-container">
         <h1 className="text-4xl text-center">Sign up</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label class="form-control mt-1">
-            <div class="label">
-              <span class="label-text">Name</span>
+          <label className="form-control mt-1">
+            <div className="label">
+              <span className="label-text">Name</span>
             </div>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("name", {
                 required: {
                   value: true,
@@ -78,14 +77,14 @@ const Signup = () => {
               )}
             </div>
           </label>
-          <label class="form-control w-full max-w-xs mt-1">
-            <div class="label">
-              <span class="label-text">Email</span>
+          <label className="form-control w-full max-w-xs mt-1">
+            <div className="label">
+              <span className="label-text">Email</span>
             </div>
             <input
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               {...register("email", {
                 required: {
                   value: true,
@@ -111,14 +110,14 @@ const Signup = () => {
               )}
             </div>
           </label>
-          <label class="form-control w-full max-w-xs mt-1">
-            <div class="label">
-              <span class="label-text">Password</span>
+          <label className="form-control w-full max-w-xs mt-1">
+            <div className="label">
+              <span className="label-text">Password</span>
             </div>
             <input
               type="password"
               placeholder="Password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               {...register("password", {
                 required: {
                   value: true,
@@ -161,8 +160,8 @@ const Signup = () => {
             </Link>
           </p>
         </form>
-        <div class="flex flex-col w-full border-opacity-50">
-          <div class="divider">OR</div>
+        <div className="flex flex-col w-full border-opacity-50">
+          <div className="divider">OR</div>
         </div>
         <SocialLogin
           signInWithGoogle={signInWithGoogle}

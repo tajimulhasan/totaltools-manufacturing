@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import SocialLogin from './SocialLogin/SocialLogin';
 import authImg from '../../images/authImg.png';
 import { useForm } from 'react-hook-form';
@@ -26,7 +26,7 @@ const Login = () => {
   );
   const [token] = useToken(user || guser || gituser);
 
-const handleEmailWithRef = useRef('');
+const emailRef = useRef('');
  const navigate = useNavigate();
  const location = useLocation();
 
@@ -49,7 +49,7 @@ const handleEmailWithRef = useRef('');
 
 
 const handleResetPass = async() =>{
-   const email = handleEmailWithRef.current.value;
+   const email = emailRef.current.value;
    if(email){
     await sendPasswordResetEmail(email);
     toast.success('Sent email')
@@ -67,15 +67,15 @@ const handleResetPass = async() =>{
       <div className="form-container">
         <h1 className="text-4xl text-center">Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label class="form-control w-full max-w-xs mt-1">
-            <div class="label">
-              <span class="label-text">Email</span>
+          <label className="form-control w-full max-w-xs mt-1">
+            <div className="label">
+              <span className="label-text">Email</span>
             </div>
             <input
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full max-w-xs"
-              ref={handleEmailWithRef}
+              className="input input-bordered w-full max-w-xs"
+              ref={emailRef}
               {...register("email", {
                 required: {
                     value: true,
@@ -94,14 +94,14 @@ const handleResetPass = async() =>{
                 <small role='alert' className="text-red-500 text-sm my-1">{errors.email.message}</small>
             )}
           </label>
-          <label class="form-control w-full max-w-xs mt-1">
-            <div class="label">
-              <span class="label-text">Password</span>
+          <label className="form-control w-full max-w-xs mt-1">
+            <div className="label">
+              <span className="label-text">Password</span>
             </div>
             <input
               type="password"
               placeholder="Password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               {...register("password", {
                 required: {
                     value: true,
@@ -130,8 +130,8 @@ const handleResetPass = async() =>{
           />
             <p className="text-base text-center py-2">New in TotalTools? <Link to="/signup" className="text-blue-500 hover:underline">Create an account</Link></p>
         </form>
-        <div class="flex flex-col w-full border-opacity-50">
-          <div class="divider">OR</div>
+        <div className="flex flex-col w-full border-opacity-50">
+          <div className="divider">OR</div>
         </div>
         <SocialLogin signInWithGoogle={signInWithGoogle} signInWithGithub={signInWithGithub}></SocialLogin>
       </div>

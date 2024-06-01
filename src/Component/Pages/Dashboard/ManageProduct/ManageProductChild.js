@@ -13,15 +13,15 @@ const ManageProductChild = ({ allProduct, index, refetch }) => {
   return (
     <tr>
       <td className="">
-        <div class="flex items-center gap-3">
-          <div class="avatar">
-            <div class=" w-12 h-12">
+        <div className="flex items-center gap-3">
+          <div className="avatar">
+            <div className=" w-12 h-12">
               <img src={picture} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
-            <div class="font-bold">{productName}</div>
-            <div class="text-sm opacity-50">Available: {availableQuantity}</div>
+            <div className="font-bold">{productName}</div>
+            <div className="text-sm opacity-50">Available: {availableQuantity}</div>
           </div>
         </div>
       </td>
@@ -48,14 +48,14 @@ const ManageProductChild = ({ allProduct, index, refetch }) => {
         <label 
         onClick={() => setProductUpdate(allProduct)}
         htmlFor="product-update"
-        class="btn btn-sm bg-primary"
+        className="btn btn-sm bg-primary"
         >Edit</label>
       </td>
       <td className="w-10">
         <label 
         onClick={() => setProductDelete(allProduct)}
         htmlFor="product-delete"
-        class="btn btn-sm bg-red-500"
+        className="btn btn-sm bg-red-500"
         >Delete</label>
       </td>
     {availableQuantityUpdate && <UpdateModal availableQuantityUpdate={availableQuantityUpdate} setAvailableQuantityUpdate={setAvailableQuantityUpdate} id={_id} name={productName} refetch={refetch}></UpdateModal>}

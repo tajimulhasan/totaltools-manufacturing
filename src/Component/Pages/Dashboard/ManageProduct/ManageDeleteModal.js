@@ -20,23 +20,23 @@ const ManageDeleteModal = ({setProductDelete, productDelete, refetch}) => {
     }
     return (
         <div>
-                <input type="checkbox" id="product-delete" class="modal-toggle" />
-      <div class="modal" role="dialog">
-        <div class="modal-box">
+                <input type="checkbox" id="product-delete" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
           <p className="text-xl mb-5">Are you sure you want to delete this product?<span className="text-primary"></span></p>
           <form method="dialog">
             <label
               for="product-delete"
-              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
             >
               ✕
             </label>
           </form>
-          <div class="modal-action">
-          <button onClick={() => handleRemoveProduct()} class="btn btn-error btn-xs">
+          <div className="modal-action">
+          <button onClick={() => handleRemoveProduct()} className="btn btn-error btn-xs">
             Confirm
           </button>
-          <label for="product-delete" class="btn btn-xs">
+          <label for="product-delete" className="btn btn-xs">
             Cancel
           </label>
         </div>

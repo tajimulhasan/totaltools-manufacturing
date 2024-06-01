@@ -29,8 +29,8 @@ const AllUsers = () => {
     return (
         <div className='allUsers'>
             <h1>Here is all users: {users?.length}</h1>
-            <div class="overflow-x-auto">
-  <table class="table">
+            <div className="overflow-x-auto">
+  <table className="table">
 
     <thead>
       <tr>

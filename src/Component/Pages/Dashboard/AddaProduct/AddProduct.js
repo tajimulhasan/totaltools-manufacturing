@@ -58,83 +58,83 @@ const AddProduct = () => {
     <div className="addProduct-container">
       <form onSubmit={handleAddProductSubmit}>
         <h1>Add Product</h1>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Product name:</span>
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">Product name:</span>
           </div>
           <input
             type="text"
             name="name"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs"
             required
           />
         </label>
        <div className="quantity-manage-container flex justify-between">
-        <label class="form-control w-36 max-w-xs">
-          <div class="label">
-            <span class="label-text">Available quantity:</span>
+        <label className="form-control w-36 max-w-xs">
+          <div className="label">
+            <span className="label-text">Available quantity:</span>
           </div>
           <input
             type="number"
             name="availablequantity"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs"
             required
           />
         </label>
-        <label class="form-control w-36 max-w-xs">
-          <div class="label">
-            <span class="label-text">Minimum order qua: </span>
+        <label className="form-control w-36 max-w-xs">
+          <div className="label">
+            <span className="label-text">Minimum order qua: </span>
           </div>
           <input
             type="number"
             name="moquantity"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs"
             required
           />
         </label>
        </div>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Price:</span>
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">Price:</span>
           </div>
           <input
             type="number"
             name="price"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs"
             required
           />
         </label>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Short description:</span>
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">Short description:</span>
           </div>
           <textarea
             type="text"
             name="shortdescription"
             placeholder="Type here"
-            class="textarea textarea-bordered w-full max-w-xs "
+            className="textarea textarea-bordered w-full max-w-xs "
             required
           />
         </label>
-        <label class="form-control w-full max-w-xs">
-          <div class="label">
-            <span class="label-text">Product image:</span>
+        <label className="form-control w-full max-w-xs">
+          <div className="label">
+            <span className="label-text">Product image:</span>
           </div>
           <input
             type="file"
             name="picture"
-            class="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs"
             required
           />
         </label>
         <input
           type="submit"
           value="Add a product"
-          class="input input-bordered w-full max-w-xs btn bg-primary mt-3 hover:bg-black hover:text-white"
+          className="input input-bordered w-full max-w-xs btn bg-primary mt-3 hover:bg-black hover:text-white"
           required
         />
       </form>

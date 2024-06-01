@@ -19,16 +19,16 @@ const {_id, productName} = orderCancel;
     }
     return (
         <div>
-        <input type="checkbox" id="order-cancel" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box">
-            <h3 class=" text-lg text-secondary">Are your sure you want to cancel your order: <span className="text-red-400 font-bold">{productName}</span>
+        <input type="checkbox" id="order-cancel" className="modal-toggle" />
+        <div className="modal" role="dialog">
+          <div className="modal-box">
+            <h3 className=" text-lg text-secondary">Are your sure you want to cancel your order: <span className="text-red-400 font-bold">{productName}</span>
             </h3>
-            <div class="modal-action">
-              <button onClick={() => handleOrderCancel()} class="btn btn-error btn-xs">
+            <div className="modal-action">
+              <button onClick={() => handleOrderCancel()} className="btn btn-error btn-xs">
                 Confirm
               </button>
-              <label for="order-cancel" class="btn btn-xs">
+              <label for="order-cancel" className="btn btn-xs">
                 Close!
               </label>
             </div>

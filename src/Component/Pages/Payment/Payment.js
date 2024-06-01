@@ -29,9 +29,9 @@ const Payment = () => {
   }
   return (
     <div className="max-w-max mx-auto mt-14 payment-card-parent">
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title text-primary">Hello, {order.clientName}</h2>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title text-primary">Hello, {order.clientName}</h2>
            <div className="single-order-card">
              <p>Your product <span className="font-bold">{order.productName}</span> has been placed. Quantity is <span className="font-bold">{order.orderQuantity}</span>, Price <span className="font-bold">${order.totalPrice}</span>. Please pay the bill to complete the process.</p>
            </div>

@@ -31,7 +31,7 @@ const ManageAllOrderChild = ({ manageOrder, index, refetch }) => {
       });
   };
   return (
-    <tr class="hover">
+    <tr className="hover">
       <th>{index + 1}</th>
       <td>{productName}</td>
       <td>{email}</td>
@@ -39,7 +39,7 @@ const ManageAllOrderChild = ({ manageOrder, index, refetch }) => {
       <td>{address}</td>
       <td>{phoneNumber}</td>
       <td>${totalPrice}</td>
-      
+
       <td className="text-center">
         { manageOrder?.status === "unpaid" && <span className="btn btn-xs bg-red-400">Unpaid</span>}
         { manageOrder?.status === "paid" && <span className="btn btn-xs bg-primary">Pending</span>}

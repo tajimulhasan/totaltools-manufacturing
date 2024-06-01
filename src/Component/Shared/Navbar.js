@@ -20,7 +20,7 @@ const handleLogout = () =>{
     localStorage.removeItem('accessToken')
 }
   return (
-    <div class="main">
+    <div className="main">
       <nav>
         <input type="checkbox" id="check" />
         <div className="logo">
@@ -48,7 +48,7 @@ const handleLogout = () =>{
             ) : (
               <Link className="cus-ul" to="/login">
                 <li>
-                <a href=""><button class="login-button">Login</button></a>
+                <a href=""><button className="login-button">Login</button></a>
                 </li>
               </Link>
             )}

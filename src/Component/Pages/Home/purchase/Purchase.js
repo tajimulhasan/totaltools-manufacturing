@@ -109,55 +109,55 @@ const Purchase = () => {
       </div>
 
       <form onSubmit={handleSubmitOrder} className="input-filed-of-puchase">
-        <label class="form-control w-full max-w-xs my-2">
-          <span class="label-text mb-1">Name</span>
+        <label className="form-control w-full max-w-xs my-2">
+          <span className="label-text mb-1">Name</span>
           <input
             type="text"
             value={displayName}
             readOnly
             disabled
-            class="input input-bordered input-md  w-full max-w-xs "
+            className="input input-bordered input-md  w-full max-w-xs "
           />
         </label>
-        <label class="form-control w-full max-w-xs my-2">
-          <span class="label-text mb-1">Email</span>
+        <label className="form-control w-full max-w-xs my-2">
+          <span className="label-text mb-1">Email</span>
           <input
             type="email"
             value={email}
             readOnly
             disabled
-            class="input input-bordered input-md  w-full max-w-xs "
+            className="input input-bordered input-md  w-full max-w-xs "
           />
         </label>
-        <label class="form-control w-full max-w-xs my-2">
-          <span class="label-text mb-1">Quantity</span>
+        <label className="form-control w-full max-w-xs my-2">
+          <span className="label-text mb-1">Quantity</span>
           <input
             onChange={handleOrderQuantity}
             type="number"
             placeholder="Quantity"
-            class="input input-bordered input-md  w-full max-w-xs "
+            className="input input-bordered input-md  w-full max-w-xs "
             required
           />
           {error && <p className="text-red-500 text-sm py-1">{error}</p>}
         </label>
 
-        <label class="form-control w-full max-w-xs my-2">
-          <span class="label-text mb-1">Address</span>
+        <label className="form-control w-full max-w-xs my-2">
+          <span className="label-text mb-1">Address</span>
           <input
             name="address"
             type="text"
             placeholder="Address"
-            class="input input-bordered input-md  w-full max-w-xs "
+            className="input input-bordered input-md  w-full max-w-xs "
             required
           />
         </label>
-        <label class="form-control w-full max-w-xs my-2">
-          <span class="label-text mb-1">Contact</span>
+        <label className="form-control w-full max-w-xs my-2">
+          <span className="label-text mb-1">Contact</span>
           <input
             name="phoneNumber"
             type="number"
             placeholder="phone number"
-            class="input input-bordered input-md  w-full max-w-xs "
+            className="input input-bordered input-md  w-full max-w-xs "
             required
           />
         </label>

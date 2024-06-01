@@ -26,8 +26,8 @@ if(isLoading){
     return (
         <div className='manage-all-orders-container'>
             <h1 className='mao'>Manage All Orders</h1>
-            <div class="overflow-x-auto">
-  <table class="table table-container">
+            <div className="overflow-x-auto">
+  <table className="table table-container">
     <thead>
       <tr>
         <th></th>

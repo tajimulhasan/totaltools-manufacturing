@@ -18,10 +18,9 @@ const Reviews = () => {
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);
-          console.log(data);
         });
     }
-  }, [user]);
+  }, [reviews, user]);
 
   if (loading) {
     return <Loading></Loading>;
@@ -79,8 +78,8 @@ const reviewParent = (
 
         ></Review>
           <div>
-          {reviews.map((r) => (
-          <NewReview key={r._id} r={r} profileImg={profile2} />
+          {reviews?.map((r, index) => (
+          <NewReview key={index || r._id} r={r} profileImg={profile2} />
         ))}
           </div>
       </div>

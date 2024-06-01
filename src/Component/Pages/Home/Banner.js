@@ -28,7 +28,7 @@ const Banner = () => {
         <SwiperSlide>
           {" "}
           <div className="image">
-            <img src={banner2} class="w-full" alt="" />
+            <img src={banner2} className="w-full" alt="" />
             <div className="image-details p-2">
               <h2>ALL TYPE OF</h2>
               <h1 className="heading1 font-bold">BASIC TOOLS</h1>
@@ -40,7 +40,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
            <div className="image">
-            <img src={banner} class="w-full" alt="" />
+            <img src={banner} className="w-full" alt="" />
             <div className="image-details p-2">
               <h1 className="heading1 font-bold">BEST QUALITY</h1>
               <p className="mb-0 provide">WE PROVIDE QUALITY PRODUCT AND ENSURE SUSTAIN FOR LONG TIME.</p>
@@ -52,7 +52,7 @@ const Banner = () => {
           </SwiperSlide>
         <SwiperSlide>
           <div className="image">
-            <img src={banner3} class="w-full" alt="" />
+            <img src={banner3} className="w-full" alt="" />
             <div className="image-details thirdOne p-2">
               <h1 className="text-6xl font-bold text-white">HANDY TOOLS</h1>
               <p className="mt-5 mb-0 provide text-white">WE KEEP YOUR TOOLS MORE HANDY FOR WORK EASILY DONE.</p>
