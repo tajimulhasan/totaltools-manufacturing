@@ -4,7 +4,7 @@
 * Adimin:
 Adimn will see on the [Dashboard] diffent routes. Fist of all admin will see Allusers he/she could delete any user and make someone admin. In Dashboard, There is [Add-A-Product] , [Mnange-Product], [Manage-All-Orders] and [Profile] options. Admin could add product, delete product, update product, update available quantity, and manage all orders. In Manage All Orders page admin could see all orders of client. Also could delete order which is unpaid, and chage status pending to shipped by clicking button.
 
-## In TotalTools manufacturing we have used
+## In TotalTools manufacturing I have used
 * ReactJS
 * HTML
 * CSS
