@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 
 const ManageProducts = () => {
   const {data: allProducts, isLoading, refetch} = useQuery("allProducts", () => fetch(`http://localhost:5000/products`).then(res => res.json()));
+
+  
  if(isLoading){
   return <Loading></Loading>
  }

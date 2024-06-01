@@ -1,12 +1,16 @@
 import React from 'react';
 import './Product.css';
 import { useNavigate } from 'react-router-dom';
+
 const Product = ({product}) => {
             const {_id, productName, picture, moQuantity, availableQuantity, price, shortDescription} = product;
             const navigate = useNavigate();
+
             const handlePurchase = id =>{
                 navigate(`/purchase/${id}`)
             }
+
+            
     return (
         <div className='product'>
             <img src={picture} alt="" />

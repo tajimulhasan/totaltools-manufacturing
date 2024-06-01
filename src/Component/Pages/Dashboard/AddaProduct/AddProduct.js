@@ -21,8 +21,6 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((imgData) => {
-
-
         if (imgData.success) {
           const pictureUrl = imgData.data.url;
           const data = {

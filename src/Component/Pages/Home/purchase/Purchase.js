@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Purchase.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";
-import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 
 const Purchase = () => {
@@ -13,6 +12,7 @@ const Purchase = () => {
   const [product, setProduct] = useState({});
   const [user] = useAuthState(auth);
   const { id } = useParams();
+
   useEffect(() => {
     const url = `http://localhost:5000/products/${id}`;
     fetch(url)
@@ -23,13 +23,6 @@ const Purchase = () => {
       });
   }, [id]);
 
-  //   const {
-  //     register,
-  //     handleSubmit,
-  //     reset,
-  //     formState: { errors },
-  //   } = useForm();
-
   const {
     productName,
     shortDescription,
@@ -38,6 +31,7 @@ const Purchase = () => {
     price,
     picture,
   } = product;
+
   const { displayName, email } = user;
 
   const handleOrderQuantity = (e) => {
@@ -54,17 +48,10 @@ const Purchase = () => {
       setAgree(false);
     }
   };
-  // //submition
-  // const onSubmit = async (data) => {
-
-  //     console.log(data);
-  //     reset();
-  //   };
 
   const handleSubmitOrder = (e) => {
     e.preventDefault();
     const clientName = displayName;
-    const orderQuantity = e.target.orderQuantity.value;
     const address = e.target.address.value;
     const phoneNumber = e.target.phoneNumber.value;
     const totalPrice = parseInt(orderQuantity) * price; 
@@ -81,9 +68,10 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if(data){
+          toast.success("Order place successfully! Go to dashboard and pay the bill.");
+        }
         e.target.reset();
-        toast.success("Order place successfully! Go to dashboard and pay the bill.");
       });
       const newQuantity = availableQuantity - parseInt(orderQuantity);  
 
@@ -99,7 +87,9 @@ const Purchase = () => {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        if(data){
+          console.log("available quantity updated")
+        }
       })
   };
 
@@ -143,21 +133,11 @@ const Purchase = () => {
           <span class="label-text mb-1">Quantity</span>
           <input
             onChange={handleOrderQuantity}
-            name="orderQuantity"
             type="number"
             placeholder="Quantity"
             class="input input-bordered input-md  w-full max-w-xs "
             required
-            // {...register("quantityNumber", {
-            //     required: {
-            //         value: true,
-            //         message: "Quantity is required"
-            //     }
-            // })}
           />
-          {/* {errors.quantityNumber?.type === "required" && (
-            <small className="text-red-500 text ">{errors.quantityNumber.message}</small>
-           )} */}
           {error && <p className="text-red-500 text-sm py-1">{error}</p>}
         </label>
 
@@ -181,14 +161,6 @@ const Purchase = () => {
             required
           />
         </label>
-
-        {/* <input
-          disabled={agree}
-          type="submit"
-          class="form-control w-full max-w-xs mt-4 btn bg-primary hover:text-white hover:bg-black"
-        >
-          Payment Gateway
-        </input> */}
         <input
           disabled={agree}
           type="submit"

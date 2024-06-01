@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="anchor-tag">
         <div className="footer-pack">
           <h6 class="footerTitle">Services</h6>
-          <a href="#">Tools selling</a>
+          <a href="home#productId-for-footer">Tools selling</a>
           <a href="#">Exchanging</a>
           <a href="#">Marketing</a>
           <a href="#">Customizing</a>

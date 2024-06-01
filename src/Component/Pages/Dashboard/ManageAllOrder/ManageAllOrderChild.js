@@ -39,8 +39,7 @@ const ManageAllOrderChild = ({ manageOrder, index, refetch }) => {
       <td>{address}</td>
       <td>{phoneNumber}</td>
       <td>${totalPrice}</td>
-
-      {/* <td><span className={`btn btn-xs ${manageOrder?.status === 'unpaid' ? 'btn-error' : ' bg-green-400 border-0'}`}>{manageOrder?.status === 'paid' ? 'Pending' : manageOrder?.status }</span></td> */}
+      
       <td className="text-center">
         { manageOrder?.status === "unpaid" && <span className="btn btn-xs bg-red-400">Unpaid</span>}
         { manageOrder?.status === "paid" && <span className="btn btn-xs bg-primary">Pending</span>}
