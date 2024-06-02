@@ -12,9 +12,12 @@ const Products = () => {
   if(isLoading){
     return <Loading></Loading>
   }
-  if (error){
-    return <p className="text-red-500">'An error has occurred: ' {+ error?.message}</p>
-  } 
+
+  if (error) {
+    return (
+        <p className="text-red-500">An error has occurred: {error?.message}</p>
+    );
+}
 
   const showProducts = showAllProduct ? products : products.slice(0, 6);
   
