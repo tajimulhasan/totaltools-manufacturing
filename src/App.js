@@ -41,17 +41,18 @@ function App() {
             </RequireAuth>
           }
         >
-          {!admin ? (
-            <Route index element={<MyOrders></MyOrders>}></Route>
+          {admin ? (
+             <Route
+             index
+             element={
+               <RequireAdmin>
+                 <AllUsers></AllUsers>
+               </RequireAdmin>
+             }
+           ></Route>
+            
           ) : (
-            <Route
-              index
-              element={
-                <RequireAdmin>
-                  <AllUsers></AllUsers>
-                </RequireAdmin>
-              }
-            ></Route>
+            <Route index element={<MyOrders></MyOrders>}></Route>
           )}
           <Route path="addareview" element={<AddaReview></AddaReview>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
