@@ -14,7 +14,7 @@ const Reviews = () => {
   const [user, loading] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/reviews?email=${user.email}`)
+      fetch(`https://totaltools-manufacturing-server-site.vercel.app/reviews?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);

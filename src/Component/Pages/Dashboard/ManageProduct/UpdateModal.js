@@ -7,7 +7,7 @@ const UpdateModal = ({setAvailableQuantityUpdate, id, availableQuantityUpdate, n
         e.preventDefault();
         const newQuantity = parseInt(e.target.availablequantity.value);
         const upadatedQuantity = availableQuantityUpdate + newQuantity;
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://totaltools-manufacturing-server-site.vercel.app/products/${id}`;
         fetch(url, {
             method: "PATCH",
             headers: {

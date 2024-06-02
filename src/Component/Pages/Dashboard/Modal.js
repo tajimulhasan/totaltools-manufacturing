@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 const Modal = ({userRemove, setUserRemove, refetch}) => {
   const {email} = userRemove;
   const handleRemove = () =>{
-  fetch(`http://localhost:5000/users/${email}`, {
+  fetch(`https://totaltools-manufacturing-server-site.vercel.app/users/${email}`, {
     method: "DELETE",
     headers: {
       'authorization': `Bearer ${localStorage.getItem('accessToken')}`

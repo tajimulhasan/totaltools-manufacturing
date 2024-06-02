@@ -5,7 +5,7 @@ import './ManageProducts.css';
 import { ToastContainer } from "react-toastify";
 
 const ManageProducts = () => {
-  const {data: allProducts, isLoading, refetch} = useQuery("allProducts", () => fetch(`http://localhost:5000/products`).then(res => res.json()));
+  const {data: allProducts, isLoading, refetch} = useQuery("allProducts", () => fetch(`https://totaltools-manufacturing-server-site.vercel.app/products`).then(res => res.json()));
 
 
  if(isLoading){

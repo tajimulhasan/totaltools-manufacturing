@@ -9,7 +9,7 @@ import { Navigate } from 'react-router-dom';
 import './AllUsers.css';
 const AllUsers = () => {
   const [userRemove, setUserRemove] = useState(null);    
-  const {data: users, isLoading, refetch} = useQuery('users', () => fetch(`http://localhost:5000/users`, {
+  const {data: users, isLoading, refetch} = useQuery('users', () => fetch(`https://totaltools-manufacturing-server-site.vercel.app/users`, {
     method: "GET", 
         headers: {
           'authorization': `Bearer ${localStorage.getItem('accessToken')}`

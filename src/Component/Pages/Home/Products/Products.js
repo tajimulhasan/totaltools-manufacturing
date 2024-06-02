@@ -7,7 +7,7 @@ import './Products.css';
 const Products = () => {
   const [showAllProduct, setShowAllProduct] = useState(false);
   const {data: products, isLoading, error} = useQuery("productsDoc", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch("https://totaltools-manufacturing-server-site.vercel.app/products").then((res) => res.json())
   );
   if(isLoading){
     return <Loading></Loading>

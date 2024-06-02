@@ -3,7 +3,7 @@ import {toast} from 'react-toastify';
 
 const ManageDeleteModal = ({setProductDelete, productDelete, refetch}) => {
     const handleRemoveProduct = (e) =>{
-       fetch(`http://localhost:5000/products/${productDelete._id}`, {
+       fetch(`https://totaltools-manufacturing-server-site.vercel.app/products/${productDelete._id}`, {
         method: "DELETE",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

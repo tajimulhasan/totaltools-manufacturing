@@ -12,7 +12,7 @@ const CheckoutForm = ({order}) => {
     const { _id, totalPrice, email, clientName} = order;
 
 useEffect(() =>{
-  fetch('http://localhost:5000/create-payment-intent', {
+  fetch('https://totaltools-manufacturing-server-site.vercel.app/create-payment-intent', {
     method: "POST",
     headers: {
         'content-type': 'application/json',
@@ -76,7 +76,7 @@ useEffect(() =>{
             }
 
 
-                fetch(`http://localhost:5000/orders/${_id}`, {
+                fetch(`https://totaltools-manufacturing-server-site.vercel.app/orders/${_id}`, {
                     method: "PATCH",
                     headers: {
                         'content-type': 'application/json',

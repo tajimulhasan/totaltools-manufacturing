@@ -15,7 +15,7 @@ const MyOrders = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      const url = `http://localhost:5000/orders?email=${user.email}`;
+      const url = `https://totaltools-manufacturing-server-site.vercel.app/orders?email=${user.email}`;
       fetch(url, {
         method: "GET",
         headers: {
