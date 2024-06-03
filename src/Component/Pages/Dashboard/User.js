@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const User = ({user, index, setUserRemove, refetch}) => {
     const {email, role} = user;
          const handleMakeAdmin = () =>{
-            fetch(`https://totaltools-manufacturing-server-site.vercel.app/users/admin/${email}`, {
+            fetch(`https://totaltools-manufacturing.vercel.app/users/admin/${email}`, {
                 method: "PUT",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem("accessToken")}`

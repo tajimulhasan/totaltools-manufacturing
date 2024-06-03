@@ -2,8 +2,6 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../../Loading/Loading";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../../firebase.init";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
@@ -15,7 +13,7 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const url = `https://totaltools-manufacturing-server-site.vercel.app/orders/${id}`;
+  const url = `https://totaltools-manufacturing.vercel.app/orders/${id}`;
   const { data: order, isLoading } = useQuery("order", () =>
     fetch(url, {
       method: "GET",

@@ -6,7 +6,7 @@ const useToken = user =>{
        const email = user?.user?.email;
        const currentUser = {email: email};
        if(email){
-           const url = `https://totaltools-manufacturing-server-site.vercel.app/users/${email}`;
+           const url = `https://totaltools-manufacturing.vercel.app/users/${email}`;
            fetch(url, {
             method: "PUT",
             headers: {

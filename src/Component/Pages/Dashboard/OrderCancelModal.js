@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 const OrderCancelModal = ({orderCancel, setOrderCancel}) => {
 const {_id, productName} = orderCancel;
     const handleOrderCancel = () =>{
-          fetch(`https://totaltools-manufacturing-server-site.vercel.app/orders/${_id}`, {
+          fetch(`https://totaltools-manufacturing.vercel.app/orders/${_id}`, {
             method: "DELETE",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

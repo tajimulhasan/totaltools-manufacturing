@@ -15,7 +15,7 @@ const MyOrders = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      const url = `https://totaltools-manufacturing-server-site.vercel.app/orders?email=${user.email}`;
+      const url = `https://totaltools-manufacturing.vercel.app/orders?email=${user.email}`;
       fetch(url, {
         method: "GET",
         headers: {
@@ -39,7 +39,7 @@ const MyOrders = () => {
           }
         });
     }
-  }, [user, orders]);
+  }, [user, orders, navigate]);
 
   return (
     <div className="overflow-x-auto table-container">

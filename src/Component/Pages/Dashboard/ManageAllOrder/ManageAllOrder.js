@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom';
 import './ManageAllOrder.css';
 import { ToastContainer } from 'react-toastify';
 const ManageAllOrder = () => {
-  const {data: ManageAllOrders, isLoading, refetch} = useQuery("ManageAllOrders", () =>  fetch('https://totaltools-manufacturing-server-site.vercel.app/allOrders', {
+  const {data: ManageAllOrders, isLoading, refetch} = useQuery("ManageAllOrders", () =>  fetch('https://totaltools-manufacturing.vercel.app/allOrders', {
     method: "GET",
     headers: {
         'authorization': `Bearer ${localStorage.getItem('accessToken')}`

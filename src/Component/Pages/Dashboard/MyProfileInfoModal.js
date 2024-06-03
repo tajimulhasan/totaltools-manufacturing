@@ -16,7 +16,7 @@ const MyProfileInfoModal = ({setMyProfileInfo, refetch}) => {
        const email = user.email;
         const data = {email, education, location, phoneNumber, linkedIn};
 
-        const url = 'https://totaltools-manufacturing-server-site.vercel.app/profile';
+        const url = 'https://totaltools-manufacturing.vercel.app/profile';
         fetch(url, {
             method: "POST",
              headers: {

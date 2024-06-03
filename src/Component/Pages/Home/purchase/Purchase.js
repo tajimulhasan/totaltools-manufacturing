@@ -14,7 +14,7 @@ const Purchase = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const url = `https://totaltools-manufacturing-server-site.vercel.app/products/${id}`;
+    const url = `https://totaltools-manufacturing.vercel.app/products/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -58,7 +58,7 @@ const Purchase = () => {
     const status = 'unpaid';
     const data = { clientName, productName, email, orderQuantity, address, phoneNumber,  totalPrice, status};
 
-    const url = `https://totaltools-manufacturing-server-site.vercel.app/orders`;
+    const url = `https://totaltools-manufacturing.vercel.app/orders`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -77,7 +77,7 @@ const Purchase = () => {
 
       setProduct((preQuantity) => ({...preQuantity, availableQuantity: newQuantity}));
 
-      const url1 = `https://totaltools-manufacturing-server-site.vercel.app/products/${id}`;
+      const url1 = `https://totaltools-manufacturing.vercel.app/products/${id}`;
       fetch(url1, {
         method: "PUT",
         headers: {
