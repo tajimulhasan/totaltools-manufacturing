@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const UnpaidOrderDeleteModal = ({setUnpaidOrderDelete, refetch, unpaidOrderdelete}) => {
     const handleUnpaidOrderDelete = () =>{
-        fetch(`https://totaltools-manufacturing.vercel.app/orders/${unpaidOrderdelete._id}`, {
+        fetch(`https://totaltools-manufacturing-server-site.onrender.com/orders/${unpaidOrderdelete._id}`, {
             method: "DELETE",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

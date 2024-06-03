@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const url = `https://totaltools-manufacturing.vercel.app/orders/${id}`;
+  const url = `https://totaltools-manufacturing-server-site.onrender.com/orders/${id}`;
   const { data: order, isLoading } = useQuery("order", () =>
     fetch(url, {
       method: "GET",

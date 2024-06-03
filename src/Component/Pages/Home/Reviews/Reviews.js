@@ -14,7 +14,7 @@ const Reviews = () => {
   const [user, loading] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`https://totaltools-manufacturing.vercel.app/reviews?email=${user.email}`)
+      fetch(`https://totaltools-manufacturing-server-site.onrender.com/reviews?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);

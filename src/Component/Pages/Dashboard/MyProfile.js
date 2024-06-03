@@ -15,7 +15,7 @@ const MyProfile = () => {
   const [UpdateProfielInfo, setUpdateProfileInfo] = useState(null);
   const [user, loading] = useAuthState(auth);
   const { data: profileInfo, isLoading, refetch} = useQuery(["profileInformation", user?.email], () =>
-    fetch(`https://totaltools-manufacturing.vercel.app/profile/${user.email}`, {
+    fetch(`https://totaltools-manufacturing-server-site.onrender.com/profile/${user.email}`, {
         method: "GET",
     }).then((res) =>
       res.json()

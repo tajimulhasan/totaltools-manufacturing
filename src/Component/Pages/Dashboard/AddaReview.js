@@ -17,7 +17,7 @@ const handleReviewSubmit = e =>{
     const feedback = reviewRef.current.value;
     const data = {rating, feedback, email, reviewerName};
 
-    const url = `https://totaltools-manufacturing.vercel.app/reviews`;
+    const url = `https://totaltools-manufacturing-server-site.onrender.com/reviews`;
     fetch(url, {
         method: "POST",
         headers: {

@@ -6,7 +6,7 @@ const useAdmin = user =>{
      useEffect(() => {
          const email = user?.email;
          if(email){
-            const url = `https://totaltools-manufacturing.vercel.app/admin/${email}`;
+            const url = `https://totaltools-manufacturing-server-site.onrender.com/admin/${email}`;
             fetch(url, {
              method: "GET",
              headers: {

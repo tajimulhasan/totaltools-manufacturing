@@ -13,7 +13,7 @@ const ManageProductUpdateModal = ({productUpdate, setProductUpdate, refetch}) =>
     const picture = event.target.picture.value;
         const data = {productName, shortDescription, moQuantity, availableQuantity, price, picture};
 
-    const url = `https://totaltools-manufacturing.vercel.app/product/${productUpdate._id}`;
+    const url = `https://totaltools-manufacturing-server-site.onrender.com/product/${productUpdate._id}`;
         fetch(url, {
             method: "PATCH",
             headers: {

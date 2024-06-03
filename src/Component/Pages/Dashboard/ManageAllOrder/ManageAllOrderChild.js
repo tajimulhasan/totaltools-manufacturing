@@ -15,7 +15,7 @@ const ManageAllOrderChild = ({ manageOrder, index, refetch }) => {
   } = manageOrder;
 
   const handleShiped = (id) => {
-    fetch(`https://totaltools-manufacturing.vercel.app/manageAllOrders/${id}`, {
+    fetch(`https://totaltools-manufacturing-server-site.onrender.com/manageAllOrders/${id}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

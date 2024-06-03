@@ -12,7 +12,7 @@ const Products = () => {
     error,
   } = useQuery("products", () =>
     fetch(
-      "https://totaltools-manufacturing.vercel.app/products"
+      "https://totaltools-manufacturing-server-site.onrender.com/products"
     ).then((res) => res.json())
   );
 

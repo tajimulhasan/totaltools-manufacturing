@@ -12,7 +12,7 @@ const UpdateProfileModal = ({
     const linkedIn = event.target.linkedIn.value;
     const email = UpdateProfielInfo.email;
     const data = { education, location, phoneNumber, linkedIn };
-    const url = `https://totaltools-manufacturing.vercel.app/profile/${email}`;
+    const url = `https://totaltools-manufacturing-server-site.onrender.com/profile/${email}`;
     fetch(url, {
       method: "PUT",
       headers: {

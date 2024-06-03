@@ -33,7 +33,7 @@ const AddProduct = () => {
           };
 
 
-          const url = "https://totaltools-manufacturing.vercel.app/products";
+          const url = "https://totaltools-manufacturing-server-site.onrender.com/products";
           fetch(url, {
             method: "POST",
             headers: {
