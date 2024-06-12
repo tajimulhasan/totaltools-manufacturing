@@ -32,7 +32,7 @@ const Banner = () => {
             <div className="image-details p-2">
               <h2>ALL TYPE OF</h2>
               <h1 className="heading1 font-bold">BASIC TOOLS</h1>
-              <button className="learnmore-button md:btn sm:btn md:bg-secondary sm:bg-secondary ring-2 ring-secondary ring-offset-2 md:text-white sm:text-white md:rounded-full sm:rounded-full mt-7">
+              <button className="learnmore-button btn bg-secondary ring-2  ring-secondary ring-offset-2 text-white rounded-full  mt-7">
                 Learn more
               </button>
             </div>
