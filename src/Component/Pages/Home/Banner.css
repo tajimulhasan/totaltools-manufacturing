@@ -6,11 +6,6 @@
   position: absolute;
   top: 30%;
   left: 10%;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
 .heading1 {
   font-size: 72px;
@@ -35,8 +30,23 @@
   width: 20%;
   text-align: center;
   padding: 21px;
+  position: absolute;
+  top: 20%;
+  left: 11%;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
-
+.thirdOne h1{
+  font-family: "Oswald", sans-serif;
+}
+.handytools{
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+}
 
 /* mobile responsive  */
 @media only screen and (max-width: 576px) {
@@ -52,16 +62,18 @@
     font-size: 20px;
   }
   .heading1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .learnmore-button {
-    display: none;
+    margin-top: 0%;
+     font-size: 12px;
+      padding: 10px;
   }
   .provide {
     margin-top: 0.5rem;
     font-size: 14px;
   }
   .thirdOne {
-    display: none;
+    display: block;
   }
 }

@@ -16,10 +16,14 @@ import useToken from "../../../../hooks/useToken";
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+
   const [signInWithGithub, gituser, gitloading, giterror] =
     useSignInWithGithub(auth);
+
   const [updateProfile] = useUpdateProfile(auth);
+
   const {
     register,
     handleSubmit,
@@ -29,16 +33,16 @@ const Signup = () => {
 
   const [token] = useToken(user || guser || gituser);
 
-
   const navigate = useNavigate();
 
   if (loading || gloading || gitloading) {
     return <Loading></Loading>;
   }
 
-  if(token) {
+  if (token) {
     navigate("/");
   }
+  
   //submition
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
@@ -160,13 +164,15 @@ const Signup = () => {
             </Link>
           </p>
         </form>
-        <div className="flex flex-col w-full border-opacity-50">
+       <div className="exten">
+       <div className="flex flex-col w-full border-opacity-50">
           <div className="divider">OR</div>
         </div>
         <SocialLogin
           signInWithGoogle={signInWithGoogle}
           signInWithGithub={signInWithGithub}
         ></SocialLogin>
+       </div>
       </div>
     </div>
   );

@@ -1,0 +1,14 @@
+.notfound-tag{
+    height: 100vh;
+    margin-top: 7rem;
+}
+.notfound-tag h1{
+    font-family: "Oswald", sans-serif;
+    font-size: 130px;
+    text-align: center;
+}
+.notfound-tag h3{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 46px;
+    text-align: center;
+}

@@ -32,7 +32,7 @@ const Banner = () => {
             <div className="image-details p-2">
               <h2>ALL TYPE OF</h2>
               <h1 className="heading1 font-bold">BASIC TOOLS</h1>
-              <button className="learnmore-button btn bg-secondary ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
+              <button className="learnmore-button md:btn sm:btn md:bg-secondary sm:bg-secondary ring-2 ring-secondary ring-offset-2 md:text-white sm:text-white md:rounded-full sm:rounded-full mt-7">
                 Learn more
               </button>
             </div>
@@ -44,7 +44,7 @@ const Banner = () => {
             <div className="image-details p-2">
               <h1 className="heading1 font-bold">BEST QUALITY</h1>
               <p className="mb-0 provide">WE PROVIDE QUALITY PRODUCT AND ENSURE SUSTAIN FOR LONG TIME.</p>
-              <button className=" learnmore-button btn btn-secondary rounded-full ring-2 ring-secondary ring-offset-2 text-white mt-7">
+              <button className="learnmore-button btn bg-secondary ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
                 Learn more
               </button>
             </div>
@@ -53,10 +53,10 @@ const Banner = () => {
         <SwiperSlide>
           <div className="image">
             <img src={banner3} className="w-full" alt="" />
-            <div className="image-details thirdOne p-2">
-              <h1 className="text-6xl font-bold text-white">HANDY TOOLS</h1>
+            <div className="thirdOne p-2">
+              <h1 className="handytools">HANDY TOOLS</h1>
               <p className="mt-5 mb-0 provide text-white">WE KEEP YOUR TOOLS MORE HANDY FOR WORK EASILY DONE.</p>
-              <button className="btn-sm rounded-full ring-2 ring-primary ring-offset-2 text-white mt-7">
+              <button className="learnmore-button btn bg-secondary ring-2 ring-secondary ring-offset-2 text-white rounded-full mt-7">
                 Learn more
               </button>
             </div>

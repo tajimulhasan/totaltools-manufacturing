@@ -50,9 +50,9 @@ const ManageAllOrderChild = ({ manageOrder, index, refetch }) => {
         {(manageOrder?.status === "paid" && (
           <button
             onClick={() => handleShiped(_id)}
-            className="btn btn-sm bg-green-400"
+            className="btn btn-sm p-1 text-xs bg-green-400"
           >
-            Jump to shipped
+           Make shipped
           </button>
         )) ||
           (manageOrder?.status === "unpaid" && (

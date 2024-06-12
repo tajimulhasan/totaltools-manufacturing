@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "react-query";
-import boys from "../../images/boys.png";
+import boys from "../../images/male.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Loading/Loading";
@@ -38,7 +38,7 @@ const MyProfile = () => {
       <h2 className="myProfile">My Profile</h2>
       <div className="your-profile">
         <div className="profie-image">
-          <img className="outline outline-offset-0 outline-primary" src={user.photoURL === null ? boys : user.photoURL} alt="" />
+          <img className="outline outline-2 outline-offset-2 outline-primary" src={user.photoURL === null ? boys : user.photoURL} alt="" />
         </div>
         <p className="displayName mt-1">{user.displayName}</p>
         <p className="text-center">{user.email}</p>

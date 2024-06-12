@@ -2,7 +2,7 @@ import React from "react";
 import "./Blog.css";
 const Blog = () => {
   return (
-    <div className="w-3/4 mt-32 mx-auto">
+    <div className="w-3/4 mt-10 mx-auto mb-10">
       <div className="qAnda-container">
         <h1 className="font-bold mb-4">
           How will you improve the performance of a React Application?
@@ -49,8 +49,8 @@ const Blog = () => {
             possible. But, if you are using ES6 binding, React will not
             auto-bind your functions within components. However, you may
             manually achieve the binding. Here are some ways to bind your
-            components and functions: 🗝️ Bind in render 🗝️ Allow arrow function
-            in render 🗝️ Bind in constructor 🗝️ Bind arrow function in the class
+            components and functions: <br /> 🗝️ Bind in render <br /> 🗝️ Allow arrow function
+            in render <br /> 🗝️ Bind in constructor <br />   🗝️ Bind arrow function in the class
             property [Not in official ECMAscript]
           </p>
           <br />
@@ -177,6 +177,7 @@ Today, we want to get you acquainted with prototypal inheritance in JavaScript t
             The setter function allows for functional updates, which are important when the new state depends on the previous state. This is especially useful in scenarios where state updates are asynchronous or when you have multiple state updates happening in quick succession.</p>
         </div>
       </div>
+      <br /><br /><br />
     </div>
   );
 };

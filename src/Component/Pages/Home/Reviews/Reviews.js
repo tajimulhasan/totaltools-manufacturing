@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Review from "../Review/Review";
-import profile1 from "../../../images/boys.png";
-import profile2 from "../../../images/girls.png";
+import profile1 from "../../../images/male.png";
+import profile2 from "../../../images/female.png";
 import "./Reviews.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init";

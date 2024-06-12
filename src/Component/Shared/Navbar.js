@@ -15,48 +15,60 @@ const Navbar = () => {
   if (loading) {
     return <Loading></Loading>;
   }
-const handleLogout = () =>{
+  const handleLogout = () => {
     signOut(auth);
-    localStorage.removeItem('accessToken')
-}
+    localStorage.removeItem("accessToken");
+  };
   return (
     <div className="main">
       <nav>
         <input type="checkbox" id="check" />
         <div className="logo">
-         <Link className="cus-ul" to='/'><img src={logo} alt="" /></Link>
+          <Link className="cus-ul" to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div className="nav-elements">
           <ul>
             <Link className="cus-ul" to="/home">
-              <li>
-                <a>Home</a>
-              </li>
+              <li>Home</li>
             </Link>
-            <Link className="cus-ul" to='/dashboard'> <li>
-                <a>Dashboard</a>
-              </li></Link>
+            <Link className="cus-ul" to="/dashboard">
+              {" "}
+              <li>Dashboad</li>
+            </Link>
             <Link className="cus-ul" to="/blog">
-              <li>
-                <a>Blog</a>
-              </li>
+              <li>Blog</li>
             </Link>
             {user ? (
-              <button onClick={handleLogout}><li>
-              <a>Log out</a>
-            </li></button>
+              <button onClick={handleLogout}>
+                <li>Log out</li>
+              </button>
             ) : (
-              <Link className="cus-ul" to="/login">
-                <li>
-                <a href=""><button className="login-button">Login</button></a>
-                </li>
-              </Link>
+              <li className="loginAndLogout">
+                <Link to="/login">
+                  <button className="login-button">Login</button>
+                </Link>
+                <Link to="/signup">
+                  <button className="signup-button">Signup</button>
+                </Link>
+              </li>
             )}
           </ul>
         </div>
-        {(location.pathname === "/dashboard" || location.pathname === "/dashboard/addareview" || location.pathname === "/dashboard/myprofile" || location.pathname === "/dashboard/addProduct" || location.pathname === "/dashboard/manageProducts" || location.pathname === "/dashboard/manageAllOrders") && (
+        {(location.pathname === "/dashboard" ||
+          location.pathname === "/dashboard/addareview" ||
+          location.pathname === "/dashboard/myprofile" ||
+          location.pathname === "/dashboard/addProduct" ||
+          location.pathname === "/dashboard/manageProducts" ||
+          location.pathname === "/dashboard/manageAllOrders") && (
           <div className="open-drawer23">
-            <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Options</label>
+            <label
+              htmlFor="my-drawer-2"
+              className="btn btn-primary drawer-button lg:hidden"
+            >
+              Options
+            </label>
           </div>
         )}
         <label htmlFor="check" className="label-btn">

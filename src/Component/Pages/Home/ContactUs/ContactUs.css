@@ -1,4 +1,6 @@
 .contactus-container{
+    background-image: url(../../../images/contactusbg1.jpg);
+    background-repeat: no-repeat;
     height: 450px;
     margin: 7rem auto;
 }
