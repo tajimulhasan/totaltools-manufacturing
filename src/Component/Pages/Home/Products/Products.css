@@ -11,8 +11,9 @@
     width: max-content;
      margin-top: 30px;
 }
-.tagProduct{
+.productTag{
     font-family: "Oswald", sans-serif;
+    font-size: 40px;
 }
 
 @media only screen and (max-width: 576px) {

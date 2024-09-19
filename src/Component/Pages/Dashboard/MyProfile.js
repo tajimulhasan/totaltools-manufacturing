@@ -13,7 +13,7 @@ import { ToastContainer } from "react-toastify";
 const MyProfile = () => {
   const [myProfielInfo, setMyProfileInfo] = useState(null);
   const [UpdateProfielInfo, setUpdateProfileInfo] = useState(null);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const { data: profileInfo, isLoading, refetch} = useQuery(["profileInformation", user?.email], () =>
     fetch(`https://totaltools-manufacturing-server-site.onrender.com/profile/${user.email}`, {
         method: "GET",
@@ -21,6 +21,7 @@ const MyProfile = () => {
       res.json()
     )
   );
+
   useEffect(() => {
     if (myProfielInfo === null && UpdateProfielInfo === null) {
       refetch();
@@ -28,7 +29,7 @@ const MyProfile = () => {
   }, [myProfielInfo, UpdateProfielInfo, refetch]);
 
 
-  if (loading || isLoading) {
+  if (isLoading) {
     return <Loading></Loading>;
   }
 
@@ -38,10 +39,10 @@ const MyProfile = () => {
       <h2 className="myProfile">My Profile</h2>
       <div className="your-profile">
         <div className="profie-image">
-          <img className="outline outline-2 outline-offset-2 outline-primary" src={user.photoURL === null ? boys : user.photoURL} alt="" />
+          <img className="outline outline-2 outline-offset-2 outline-primary" src={user?.photoURL === null ? boys : user?.photoURL} alt="" />
         </div>
-        <p className="displayName mt-1">{user.displayName}</p>
-        <p className="text-center">{user.email}</p>
+        <p className="displayName mt-1">{user?.displayName}</p>
+        <p className="text-center">{user?.email}</p>
 
         {
            !profileInfo ?    

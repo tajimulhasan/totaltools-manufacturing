@@ -30,7 +30,7 @@ const Products = () => {
 
   return (
     <div className="product-container" id="productId-for-footer">
-      <h1 className="text-center tagProduct">
+      <h1 className="text-center productTag">
         <span className="text-primary">HAND TOOLS</span> MANUFACTURER
       </h1>
 

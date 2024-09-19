@@ -12,6 +12,7 @@ import auth from "../../../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../../Loading/Loading";
 import useToken from "../../../../hooks/useToken";
+import { useEffect } from "react";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -35,14 +36,17 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if(token){
+      navigate("/")
+    }
+  }, [token, navigate]);
+
   if (loading || gloading || gitloading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
 
-  if (token) {
-    navigate("/");
-  }
-  
+
   //submition
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
