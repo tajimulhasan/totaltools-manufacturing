@@ -19,9 +19,7 @@ const BusinessSummery = () => {
               <img src={backgrundPng} alt="" />
             </div>
         </div>
-        <div className="radial-parent">
           <div className="radial"></div>
-        </div>
         <div className="business-main">
           <h1 className="taglineCount text-center font-bold">
             <span className="text-primary">NUMBER OF PEOPLE</span> WHO TRUST US
